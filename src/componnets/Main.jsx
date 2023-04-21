@@ -1,4 +1,4 @@
-import { gql, useQuery } from 'urql';
+import { useQuery } from 'urql';
 
 
 import { Blob } from "./Blob";
@@ -8,29 +8,8 @@ import { Project } from "./Project";
 import ToTheStars from '../assets/To-the-stars-amico.svg'
 import StartingABusinessProject from '../assets/Starting-a-business-project-rafiki.svg'
 import { RocketLaunch } from '@phosphor-icons/react';
+import { Projects } from '../graphql/queries/project';
 
-const Projects = gql`
-  query {
-    work(where: {id: "clgqvioaj0ml60am3az6ztxp3"}) {
-        projects {
-            deploy
-            description
-            details
-            id
-            repository
-            title
-            tumb {
-                url
-            }
-            tecnologies {
-                tech
-            }
-        }
-    }
-  }
-`;
-
-console.log()
 
 export function Main() {
 
