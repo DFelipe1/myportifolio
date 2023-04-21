@@ -27,15 +27,14 @@ export function Main() {
         )
     }
     const projects = data.work.projects
-    console.log(projects)
         
     return(
         <main className='w-full flex flex-col gap-36 my-24'>
             <section id="home" className="w-full flex flex-col-reverse gap-4 lg:flex-row justify-between items-center">
             <div className="flex-1 font-bold ">
-                <h1 className='text-5xl'>Hello world!</h1>
+                <h1 className='text-5xl'>Olá Mundo!</h1>
                 <p className='text-4xl my-1'>
-                I'm developer front-end
+                    Eu Sou Desenvolvedro Front-end
                 <br />
                 <span className="text-LightGreen">Javascript</span>
                 </p>
@@ -50,18 +49,18 @@ export function Main() {
                 <img src={ToTheStars} alt="" className='object-cover'/>
             </div>
             <div className='flex-1 flex flex-col gap-4'>
-                <h2 className='text-2xl lg:text-5xl font-bold'>About Me</h2>
+                <h2 className='text-2xl lg:text-5xl font-bold'>Sobre Mim</h2>
                 <p className='text-base font-regular'>
-                Hey! My name is davi felipe, I'm a React web developer.
-                Passionate about developing and solving problems in a creative and practical way. 
-                I love creatively imagining the infinite things I can do with programming, I feel 
-                like an astronaut exploring the universe.
+                    Ei! Meu nome é david felipe, sou desenvolvedor web React.
+                    Apaixonado por desenvolver e resolver problemas de forma criativa e prática.
+                    Adoro imaginar criativamente as infinitas coisas que posso fazer com a programação, sinto
+                    como um astronauta explorando o universo.
                 <span className='text-LightGreen text-base'>
-                    Hey? Shall we create something together?
+                    Ei? Vamos criar algo juntos?
                 </span>
                 </p>
                 <Button asChild>
-                <a href="#contact">Yeaah! let's go!</a>
+                <a href="#contact">Sim! vamos!</a>
                 </Button>
             </div>
             </section>
@@ -94,7 +93,7 @@ export function Main() {
             </section>
 
             <section id='projects'>
-            <h2 className='text-2xl lg:text-5xl font-bold'>Projects</h2>
+            <h2 className='text-2xl lg:text-5xl font-bold'>Projetos</h2>
             <div className='max-w-full flex flex-col flex-wrap-reverse md:flex-row justify-between mt-6 gap-7'>
 
                 {projects.map((project, i) => {
@@ -120,30 +119,30 @@ export function Main() {
                     type="email"
                     name='email'
                     required 
-                    placeholder="type your email" 
+                    placeholder="Digite deu email" 
                     className="w-full p-2 rounded text-base md:text-lg placeholder:text-EnglishViolet bg-DarkPurple outline-none focus:border focus:border-PersianPink focus:bg-EnglishViolet"  
                     />
                 </div>
                 <div className='flex flex-col gap-2'>
-                    <label htmlFor="subject" className="text-base md:text-xl font-medium">Subject:</label>
+                    <label htmlFor="subject" className="text-base md:text-xl font-medium">Assunto:</label>
                     <input 
                     id="subject" 
                     type="text" 
                     name="_subject"
                     required
-                    placeholder="what are we going to talk about?" 
+                    placeholder="vamos falar sobre o que?" 
                     className="w-full p-2 rounded text-base md:text-lg placeholder:text-EnglishViolet bg-DarkPurple outline-none focus:border focus:border-PersianPink focus:bg-EnglishViolet"   
                     />
                 </div>
                 <div className='flex flex-col gap-2'>
-                    <label htmlFor="description" className="text-base md:text-xl font-medium">Description:</label>
+                    <label htmlFor="description" className="text-base md:text-xl font-medium">Descrição:</label>
                     <textarea 
                     name="description" 
                     id="description" 
                     cols="30" 
                     rows="8"
                     required
-                    placeholder="type what you mean here" 
+                    placeholder="digite o que você quer dizer aqui" 
                     className="w-full p-2 resize-none rounded text-base md:text-lg placeholder:text-EnglishViolet bg-DarkPurple outline-none focus:border focus:border-PersianPink focus:bg-EnglishViolet" 
                     ></textarea>
                 </div>

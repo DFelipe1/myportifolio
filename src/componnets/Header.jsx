@@ -7,16 +7,16 @@ export function Header() {
 
         <nav className="flex gap-2 lg:gap-3">
           <a tabIndex={1} href="#home" className="text-sm lg:text-lg xl:text-xl  hover:text-PersianPink after:content-['/'] after:text-RaisinBlack hover:after:text-PersianPink before:content-['/'] before:text-RaisinBlack hover:before:text-PersianPink transition-all duration-300 afrter:transition-all afrter:duration-300 before:transition-all before:duration-300">
-            Home
+            Inicio
           </a>
           <a tabIndex={1} href="#about" className="text-sm lg:text-lg xl:text-xl  hover:text-PersianPink after:content-['/'] after:text-RaisinBlack hover:after:text-PersianPink before:content-['/'] before:text-RaisinBlack hover:before:text-PersianPink transition-all duration-300 afrter:transition-all afrter:duration-300 before:transition-all before:duration-300">
-            About
+            Sobre
           </a>
           <a tabIndex={1} href="#projects" className="text-sm lg:text-lg xl:text-xl  hover:text-PersianPink after:content-['/'] after:text-RaisinBlack hover:after:text-PersianPink before:content-['/'] before:text-RaisinBlack hover:before:text-PersianPink transition-all duration-300 afrter:transition-all afrter:duration-300 before:transition-all before:duration-300">
-            Projects
+            Projetos
           </a>
           <a tabIndex={1} href="#contact" className="text-sm lg:text-lg xl:text-xl  hover:text-PersianPink after:content-['/'] after:text-RaisinBlack hover:after:text-PersianPink before:content-['/'] before:text-RaisinBlack hover:before:text-PersianPink transition-all duration-300 afrter:transition-all afrter:duration-300 before:transition-all before:duration-300">
-            Contact
+            Contato
           </a>
 
         </nav>
