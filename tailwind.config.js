@@ -31,12 +31,31 @@ export default {
         loop: {
           from: { transform: 'translateX(0)'},
           to: { transform: 'translateX(-100%)'}
+        },
+        loading: {
+          '0%, 100%': { 
+            transform: 'translate(0, 0)'
+          },
+
+          '30%': {
+            transform: 'translate(2px, 3px)'
+          },
+
+          '50%': {
+            transform: 'translate(-2px, -3px)'
+          },
+
+          '75%': {
+            transform: 'translate(3px, -2px)'
+          }
+
         }
       },
       animation: {
         overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
         contentShow: 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
         loop: 'loop 25s infinite linear ',
+        loading: 'loading 1s infinite linear'
       },
     },
       
