@@ -60,7 +60,7 @@ export function Main() {
                 </span>
                 </p>
                 <Button asChild>
-                <a href="#contact">Sim! vamos!</a>
+                    <a href="#contact">Sim! vamos!</a>
                 </Button>
             </div>
             </section>
@@ -111,6 +111,7 @@ export function Main() {
             <div className='flex-1 flex flex-col gap-5'>
                 <h3 className="text-2xl lg:text-5xl font-bold">Contact</h3>
                 <form action="https://formsubmit.co/342162fae03d3261bd57107cc46257d6 " method="POST" className='flex flex-col gap-4'>
+                <input type="hidden" name="_next" value="http://localhost:5173/"/>
                 <input type="hidden" name="_autoresponse" value="Opa! recebi sua mensagem, logo te enviarei uma resposta." />
                 <div className='flex flex-col gap-2'>
                     <label htmlFor="email" className="text-base md:text-xl font-medium">Email:</label>
