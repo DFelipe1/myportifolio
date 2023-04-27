@@ -34,8 +34,9 @@ export function Main() {
             <div className="flex-1 font-bold ">
                 <h1 className='text-5xl'>Olá Mundo!</h1>
                 <p className='text-4xl my-1'>
-                    Eu Sou Desenvolvedro Front-end
+                    Eu Sou Desenvolvedor
                 <br />
+                    Front-end
                 <span className="text-LightGreen">Javascript</span>
                 </p>
             </div>
