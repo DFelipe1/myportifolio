@@ -1,6 +1,5 @@
 import { useQuery } from 'urql';
 
-
 import { Blob } from "./Blob";
 import { Button } from "./Button";
 import { Project } from "./Project";
@@ -31,14 +30,12 @@ export function Main() {
     return(
         <main className='w-full flex flex-col gap-36 my-24'>
             <section id="home" className="w-full flex flex-col-reverse gap-4 lg:flex-row justify-between items-center">
-            <div className="flex-1 font-bold ">
-                <h1 className='text-5xl'>Olá Mundo!</h1>
-                <p className='text-4xl my-1'>
-                    Eu Sou Desenvolvedor
-                <br />
-                    Front-end
-                <span className="text-LightGreen">Javascript</span>
-                </p>
+            <div className="max-w-[500px] flex-1 font-bold ">
+                    <h1 className='text-5xl tracking-tight leading-tight'>
+                        Olá Mundo!, Sou David Felipe
+                        <span className="text-LightGreen text-4xl my-1"> Desenvolvedor Front-end</span>
+                    </h1>
+                    
             </div>
             <div className='w-[200px] h-[200px] md:w-[400px] md:h-[400px] '>
                 <Blob />
@@ -51,7 +48,7 @@ export function Main() {
             </div>
             <div className='flex-1 flex flex-col gap-4'>
                 <h2 className='text-2xl lg:text-5xl font-bold'>Sobre Mim</h2>
-                <p className='text-base font-regular'>
+                <p className='text-lg font-regular'>
                     Ei! Meu nome é david felipe, sou desenvolvedor web React.
                     Apaixonado por desenvolver e resolver problemas de forma criativa e prática.
                     Adoro imaginar criativamente as infinitas coisas que posso fazer com a programação, sinto
