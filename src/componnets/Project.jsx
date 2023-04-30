@@ -1,6 +1,9 @@
 import { ModalProject } from "./ModalProject";
 
+
+
 export function Project({ project }) {
+
     return (
         <div className='min-w-[300px] flex-1 p-2 rounded-lg flex flex-col gap-2 hover:scale-105 transition duration-150'>
               <div className='w-full'>
@@ -10,7 +13,6 @@ export function Project({ project }) {
                 <strong className='text-xl font-medium'>{project.title}</strong>
                 <span className='flex gap-2'>
                   { project.tecnologies.map((tech, i) => {
-                    console.log(tech)
                     return (
                       <div key={i} className='px-4 py-1 rounded-full bg-PersianPink/60'>
                         <img className='w-4 h-4 object-cover' src={`https://cdn.simpleicons.org/${tech.tech}/191622`} alt="" />

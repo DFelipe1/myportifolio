@@ -17,6 +17,7 @@ export function Main() {
     });
     
     const { data, fetching, error } = result;
+
       
     if(fetching) {
         return (

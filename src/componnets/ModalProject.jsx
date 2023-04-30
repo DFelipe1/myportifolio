@@ -4,13 +4,13 @@ import { Button } from './Button';
 
 export function ModalProject({data}) {
     return (
-        <Dialog.Root>
+        <Dialog.Root >
         <Dialog.Trigger asChild>
         <Button >learn more</Button>
         </Dialog.Trigger>
         <Dialog.Portal className="z-10">
-          <Dialog.Overlay className="bg-RaisinBlack/60 backdrop-blur-sm fixed inset-0" />
-          <Dialog.Content className=' bg-DarkPurple text-Text data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] w-[90vw] max-w-[500px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] p-8 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none'>
+          <Dialog.Overlay className="bg-RaisinBlack/60 backdrop-blur-sm fixed inset-0 z-20" />
+          <Dialog.Content className=' bg-DarkPurple text-Text data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] w-[90vw] max-w-[500px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] p-8 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none z-30'>
             <div className="overflow-y-auto max-h-[80vh] flex flex-col gap-2 ">
               <div className='w-full'>
                   <img className='object-cover rounded-md' src={data.tumb.url} alt='Capa do projeto' />
