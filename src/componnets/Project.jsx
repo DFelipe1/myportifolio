@@ -14,13 +14,13 @@ export function Project({ project }) {
                 <span className='flex gap-2'>
                   { project.tecnologies.map((tech, i) => {
                     return (
-                      <div key={i} className='px-4 py-1 rounded-full bg-PersianPink/60'>
+                      <div key={i} className='px-4 py-1 rounded-full bg-gradient-to-br from-indigo-600 via-violet-500 to-pink-500'>
                         <img className='w-4 h-4 object-cover' src={`https://cdn.simpleicons.org/${tech.tech}/191622`} alt="" />
                       </div>
                     )
                   })}
                 </span>
-                <p className='text-base'>
+                <p className='text-base line-clamp-3 hyphens-manual'>
                   {project.description}
                 </p>
               </div>

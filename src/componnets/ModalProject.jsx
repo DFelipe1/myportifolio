@@ -18,7 +18,7 @@ export function ModalProject({data}) {
               <div className='flex gap-2'>
                 { data.tecnologies.map((tech, i) => {
                   return (
-                    <span key={i} className='px-4 py-1 rounded-full bg-PersianPink/60' >
+                    <span key={i} className='px-4 py-1 rounded-full bg-gradient-to-br from-indigo-600 via-violet-500 to-pink-500' >
                       <img className='w-4 h-4 object-cover' src={`https://cdn.simpleicons.org/${tech.tech}/191622`} alt="" />
                     </span>
                   )
@@ -28,12 +28,12 @@ export function ModalProject({data}) {
               </div>
               <Dialog.Title className='text-xl font-medium'>{data.title}</Dialog.Title>
               <div className='w-[20%] h-1 rounded-full bg-LightGreen'/>
-              <Dialog.Description className='text-sm md:text-base px-1'>
+              <Dialog.Description className='text-sm md:text-base px-1 hyphens-manual'>
                 {data.description}
               </Dialog.Description>
 
               <div className='w-full'>
-                <p className='text-sm md:text-base px-1'>
+                <p className='text-sm md:text-base px-1 hyphens-manual '>
                   {data.details}
                 </p>
               </div>
