@@ -11,6 +11,7 @@ import { Projects } from '../graphql/queries/project';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Loading } from './Loading';
+import { Techs } from './Techs';
 
 
 export function Main() {
@@ -83,30 +84,15 @@ export function Main() {
             </section>
 
             <section className="flex overflow-hidden">
-            <div data-aos="fade-up" className="min-w-full flex flex-wrap gap-6 justify-center md:justify-evenly">
-                <div className="w-8 h-8 ">
-                <img className='object-cover' src="https://cdn.simpleicons.org/html5/FF79C6" alt="" />
+                <div data-aos="fade-up" className="min-w-full flex flex-wrap gap-6 justify-center md:justify-evenly">
+                    <Techs tech={'html5'}/>
+                    <Techs tech={'css3'}/>
+                    <Techs tech={'javascript'}/>
+                    <Techs tech={'react'}/>
+                    <Techs tech={'tailwindcss'}/>
+                    <Techs tech={'figma'}/>
+                    <Techs tech={'nodedotjs'}/>
                 </div>
-                <div className="w-8 h-8">
-                <img className='object-cover' src="https://cdn.simpleicons.org/css3/FF79C6" alt="" />
-                </div>
-                <div className="w-8 h-8">
-                <img className='object-cover' src="https://cdn.simpleicons.org/javascript/FF79C6" alt="" />
-                </div>
-                <div className="w-8 h-8">
-                <img className='object-cover' src="https://cdn.simpleicons.org/react/FF79C6" alt="" />
-                </div>
-                <div className="w-8 h-8">
-                <img className='object-cover' src="https://cdn.simpleicons.org/tailwindcss/FF79C6" alt="" />
-                </div>
-                <div className="w-8 h-8">
-                <img className='object-cover' src="https://cdn.simpleicons.org/figma/FF79C6" alt="" />
-                </div>
-                <div className="w-8 h-8">
-                <img className='object-cover' src="https://cdn.simpleicons.org/nodedotjs/FF79C6" alt="" />
-                </div>
-            </div>
-            
             </section>
 
             <section id='projects'>
@@ -128,7 +114,7 @@ export function Main() {
             <div className='flex-1 flex flex-col gap-5'>
                 <h3 data-aos="fade-right" className="text-2xl lg:text-5xl font-bold">Contact</h3>
                 <form action="https://formsubmit.co/342162fae03d3261bd57107cc46257d6 " method="POST" className='flex flex-col gap-4'>
-                <input type="hidden" name="_next" value="http://localhost:5173/"/>
+                <input type="hidden" name="_next" value="https://www.davidfelipe.dev"/>
                 <input type="hidden" name="_autoresponse" value="Opa! recebi sua mensagem, logo te enviarei uma resposta." />
                 <div className='flex flex-col gap-2'>
                     <label data-aos="fade-right" htmlFor="email" className="text-base md:text-xl font-medium">Email:</label>
