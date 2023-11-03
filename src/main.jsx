@@ -7,6 +7,7 @@ import { client } from './service/client';
 import { Header } from './componnets/Header'
 import { Main } from './componnets/Main';
 import { Footer } from './componnets/Footer';
+import { Particle } from './componnets/Particles';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider value={client}>
       <div className="w-full min-h-screen relative flex flex-col justify-between md:max-w-[700px] lg:max-w-[900px]  xl:max-w-[1140px] md:mx-auto p-3 antialiased">
         <div className="z-10">
+        <Particle/>
           <Header/>
           <Main/>
           <Footer/>
