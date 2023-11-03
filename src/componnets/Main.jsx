@@ -155,7 +155,7 @@ export function Main() {
                 </div>
 
                 <Button data-aos="fade-right" type="submit">
-                    Submit
+                    Enviar
                 </Button>
                 </form>
             </div>

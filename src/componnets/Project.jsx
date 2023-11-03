@@ -26,7 +26,7 @@ export function Project({ project }) {
               </div>
               <div className='flex gap-2 mt-2'>
                 <ModalProject data={project}/>
-                <a href={project.deploy} target="_blank" className='text-base p-3 rounded bg-DarkPurple hover:brightness-90 font-medium'>View Deploy</a>
+                <a href={project.deploy} target="_blank" className='text-base p-3 rounded-xl  bg-DarkPurple hover:brightness-90 font-medium'>Ver aplicação</a>
               </div>
             </div>
     )

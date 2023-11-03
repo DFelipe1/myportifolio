@@ -6,7 +6,7 @@ export function ModalProject({data}) {
     return (
         <Dialog.Root >
         <Dialog.Trigger asChild>
-        <Button >learn more</Button>
+        <Button >Ver mais</Button>
         </Dialog.Trigger>
         <Dialog.Portal className="z-10">
           <Dialog.Overlay className="bg-RaisinBlack/60 backdrop-blur-sm fixed inset-0 z-20" />
@@ -45,7 +45,7 @@ export function ModalProject({data}) {
                     Code
                   </a>
                 </Button> 
-                <a href={data.deploy} target='_blank' className='text-sm p-3 rounded bg-EnglishViolet hover:brightness-90 font-medium'>View Deploy</a>
+                <a href={data.deploy} target='_blank' className='text-sm p-3 rounded-xl bg-EnglishViolet hover:brightness-90 font-medium'>View Deploy</a>
               </div>
 
             </div>       
