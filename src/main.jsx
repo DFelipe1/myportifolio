@@ -14,8 +14,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider value={client}>
       <div className="w-full min-h-screen relative flex flex-col justify-between md:max-w-[700px] lg:max-w-[900px]  xl:max-w-[1140px] md:mx-auto p-3 antialiased">
-        <div className="z-10">
         <Particle/>
+        <div className="z-10">
           <Header/>
           <Main/>
           <Footer/>
