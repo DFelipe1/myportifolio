@@ -1,4 +1,5 @@
 import { globalStyles } from "@/styles/global";
+import { Layout } from "@/styles/Layout";
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 
@@ -15,7 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
             siteName: 'David Felipe Portfolio',
           }}
         />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
