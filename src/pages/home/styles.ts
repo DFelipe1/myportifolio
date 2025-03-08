@@ -11,22 +11,6 @@ export const HomeContainer = styled('main', {
         display: 'flex',
         flexDirection: 'column',
         gap: '$4',
-
-        button: {
-            border: 0,
-            backgroundColor: "transparent",
-            borderRadius: '$md',
-            padding: '$4',
-            transition: 'all',
-            transitionDuration: '0.5s',
-            color: '$CodGray950',
-    
-            cursor: 'pointer',
-    
-            '&:hover': {
-                backgroundColor: '$AlbescentWhite200',
-              },
-        }
     },
 
     nav: {

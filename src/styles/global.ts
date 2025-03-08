@@ -5,6 +5,7 @@ export const globalStyles = globalCss({
     boxSizing: 'border-box',
     padding: 0,
     margin: 0,
+    outline: 0,
   },
 
   body: {
@@ -13,4 +14,8 @@ export const globalStyles = globalCss({
     '-webkit-font-smoothing': 'antialiased',
     fontFamily: '$inter'
   },
+
+  a: {
+    textDecoration: 'none'
+  }
 })
