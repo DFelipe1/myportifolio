@@ -1,13 +1,16 @@
-import { Heading } from "@/styles/Heading";
-import { Text } from "@/styles/Text";
+import { useState } from "react";
 import { NextSeo } from "next-seo";
+import { ArrowCircleRight } from "@phosphor-icons/react/dist/ssr";
+import { Button } from "@/components/Button";
 
 import { Hero, HomeContainer, NavContainer } from "./styles";
-import { Button } from "@/components/Button";
-import { ArrowCircleRight } from "@phosphor-icons/react/dist/ssr";
+import { Text } from "@/styles/Text";
 import { Tag } from "@/styles/Tag";
+import { Heading } from "@/styles/Heading";
 
 export default function Home(){
+
+    const hourActual = new Date().getHours()
 
     return (
         <>
@@ -20,7 +23,7 @@ export default function Home(){
                 <Hero>
                     <div>
                         <Tag>
-                            Bom dia! Eu sou o
+                            {hourActual > 0 && hourActual < 12 ? 'Bom dia' : hourActual < 19 ? 'Boa tarde' : 'Boa noite'}! Eu sou o
                         </Tag>
                         <Heading as='h1' size={"xl"}>David Felipe</Heading>
                         <Heading as='span' size={"sm"} fontWeight={"bold"}>ui/ux Designer & Desenvolvdor web</Heading>
