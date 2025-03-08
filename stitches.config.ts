@@ -93,7 +93,7 @@ export const {
     },
 
     lineHeights: {
-      shorter: '125%',
+      shorter: '100%',
       short: '140%',
       base: '160%',
       tall: '180%',

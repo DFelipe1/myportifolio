@@ -4,6 +4,9 @@ export function Footer() {
     return (
         <FooterContainer>
                 <a href="http://" target="_blank" rel="noopener noreferrer">
+                    email
+                </a>
+                <a href="http://" target="_blank" rel="noopener noreferrer">
                     instagram
                 </a>
                 <a href="http://" target="_blank" rel="noopener noreferrer">
@@ -13,7 +16,7 @@ export function Footer() {
                     behance
                 </a>
                 <a href="http://" target="_blank" rel="noopener noreferrer">
-                    youtube
+                    github
                 </a>
             </FooterContainer>
     )

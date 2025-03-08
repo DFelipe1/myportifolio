@@ -16,6 +16,9 @@ export const globalStyles = globalCss({
   },
 
   a: {
-    textDecoration: 'none'
+    textDecoration: 'none',
+    color: '$CodGray900',
+    fontSize: '$md',
+    lineHeight: '$base',
   }
 })
