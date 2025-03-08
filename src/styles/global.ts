@@ -11,5 +11,6 @@ export const globalStyles = globalCss({
     backgroundColor: '$AlbescentWhite100',
     color: '$CodGray900',
     '-webkit-font-smoothing': 'antialiased',
+    fontFamily: '$inter'
   },
 })

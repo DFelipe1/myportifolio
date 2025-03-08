@@ -1,3 +1,5 @@
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { globalStyles } from "@/styles/global";
 import { Layout } from "@/styles/Layout";
 import { DefaultSeo } from "next-seo";
@@ -17,7 +19,9 @@ export default function App({ Component, pageProps }: AppProps) {
           }}
         />
       <Layout>
+        <Header/>
         <Component {...pageProps} />
+        <Footer/>
       </Layout>
     </>
   );
