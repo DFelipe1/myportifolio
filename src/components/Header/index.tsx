@@ -1,9 +1,14 @@
 import Image from "next/image";
-import { Command } from "@phosphor-icons/react/dist/ssr";
+
 
 import { HeaderContainer } from "./styles";
+import { Command } from "@phosphor-icons/react/dist/ssr";
+import { useKBar } from "kbar";
 
 export function Header(){
+
+    const { query } = useKBar();
+
     return(
         <HeaderContainer>
             <Image 
@@ -13,9 +18,9 @@ export function Header(){
                 height={40}
             />
 
-            <button>
-                <Command size={24}/>
-            </button>
+        <button onClick={() => query.toggle() }>
+            <Command size={24}/>
+        </button>
         </HeaderContainer>
     )
 }

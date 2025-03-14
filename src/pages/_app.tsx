@@ -1,3 +1,4 @@
+import { CommandBar } from "@/components/CommandBar";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { globalStyles } from "@/styles/global";
@@ -6,10 +7,14 @@ import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 
 
+
 globalStyles()
 export default function App({ Component, pageProps }: AppProps) {
+
+
+ 
   return (
-    <>
+    <CommandBar>
         <DefaultSeo
           openGraph={{
             type: 'website',
@@ -23,6 +28,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
         <Footer/>
       </Layout>
-    </>
+    </CommandBar>
   );
 }

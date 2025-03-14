@@ -7,6 +7,7 @@ import { Hero, HomeContainer, NavContainer } from "./styles";
 import { Text } from "@/styles/Text";
 import { Tag } from "@/styles/Tag";
 import { Heading } from "@/styles/Heading";
+import Link from "next/link";
 
 export default function Home(){
 
@@ -29,17 +30,13 @@ export default function Home(){
                         <Heading as='span' size={"sm"} fontWeight={"bold"}>ui/ux Designer & Desenvolvdor web</Heading>
                     </div>
                     <Text>ui/ux Designer & Desenvolvdor web</Text>
-                    <Button>
-                        <span>precione ctrl + k para começar</span>
-                        <ArrowCircleRight size={20}/>
-                    </Button>
+                   
                 </Hero>
 
                 <NavContainer>
-                    <a href="">Home</a>
-                    <a href="">About</a>
-                    <a href="">Blog</a>
-                    <a href="">Resume</a>
+                    <Link href={'/about'}>Sobre mim</Link>
+                    <Link href={'/projects'}>Projetos</Link>
+                    <Link href={'/blog'}>Blog</Link>
                 </NavContainer>
 
             </HomeContainer>
