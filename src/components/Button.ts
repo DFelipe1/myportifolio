@@ -1,6 +1,7 @@
-import { styled } from "../../../stitches.config";
+import { ComponentProps, ElementType } from "react";
+import { styled } from "../../stitches.config";
 
-export const ButtonContainer = styled('button', {
+export const Button = styled('button', {
     width: 'fit-content',
     border: 0,
     backgroundColor: "$CodGray950",
@@ -29,3 +30,9 @@ export const ButtonContainer = styled('button', {
     },
     
 })
+
+export interface ButtonProps extends ComponentProps<typeof Button> {
+    as?: ElementType
+  }
+  
+  Button.displayName = 'Button'
