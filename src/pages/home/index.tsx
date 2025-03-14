@@ -8,6 +8,7 @@ import { Text } from "@/styles/Text";
 import { Tag } from "@/styles/Tag";
 import { Heading } from "@/styles/Heading";
 import Link from "next/link";
+import { ShortcutHome } from "@/components/ShortcutHome";
 
 export default function Home(){
 
@@ -30,6 +31,8 @@ export default function Home(){
                         <Heading as='span' size={"sm"} fontWeight={"bold"}>ui/ux Designer & Desenvolvdor web</Heading>
                     </div>
                     <Text>ui/ux Designer & Desenvolvdor web</Text>
+
+                    <ShortcutHome/>
                    
                 </Hero>
 
