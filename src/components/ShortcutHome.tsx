@@ -22,13 +22,13 @@ export function ShortcutHome() {
             } else if (isMac) {
             return (
                 <Button  onClick={() => query.toggle()}>
-                Press <kbd>⌘</kbd> <kbd>K</kbd> to start →
+                Press <kbd>⌘</kbd> + <kbd>K</kbd> to start →
                 </Button>
             )
             } else {
             return (
                 <Button onClick={() => query.toggle()}>
-                Press <kbd>ctrl</kbd> <kbd>K</kbd> to start →
+                Press <kbd>ctrl</kbd> + <kbd>K</kbd> to start →
                 </Button>
             )
             }
