@@ -25,20 +25,15 @@ export default function About() {
                 />
                 <div>
                     <Text>
-                        Como criador de experiências digitais, meu objetivo é transformar ideias em realidades interativas 
-                        que encantam os usuários. Acredito que cada projeto deve contar uma história única, e é essa 
-                        narrativa que guia o desenvolvimento de soluções web inovadoras. Ao unir design e tecnologia, 
-                        busco criar plataformas que não apenas atendam às necessidades dos clientes, mas que também 
-                        proporcionem uma experiência memorável.
+                        Oi, eu sou o David Felipe! Minha jornada no mundo digital começou unindo design e 
+                        tecnologia para criar experiências interativas. Trabalho com UI/UX e desenvolvimento 
+                        front-end, sempre buscando transformar ideias em interfaces funcionais e atraentes.
                     </Text>
 
                     <Text>
-                        No mundo digital em constante evolução, é fundamental estar à frente das tendências
-                        e inovações. Por isso, dedico-me a explorar novas ferramentas e técnicas que possam 
-                        aprimorar a experiência do usuário. Cada linha de código que escrevo é pensada para 
-                        ser intuitiva e acessível, garantindo que todos possam navegar e interagir com 
-                        facilidade. Acredito que a simplicidade é a chave para um design eficaz, e é isso 
-                        que busco em cada projeto.
+                        Atualmente, estou cursando Análise e Desenvolvimento de Sistemas e aprimorando minhas 
+                        habilidades com projetos desafiadores. No tempo livre, gosto de explorar novas 
+                        tecnologias, criar side projects e, claro, curtir um bom filme.
                     </Text>
                 </div>
             </AboutContent>
