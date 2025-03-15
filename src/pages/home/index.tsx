@@ -35,12 +35,12 @@ export default function Home(){
                     <ShortcutHome/>
                    
                 </Hero>
-
+{/* 
                 <NavContainer>
                     <Link href={'/about'}>Sobre mim</Link>
                     <Link href={'/projects'}>Projetos</Link>
                     <Link href={'/blog'}>Blog</Link>
-                </NavContainer>
+                </NavContainer> */}
 
             </HomeContainer>
             

@@ -8,4 +8,5 @@ export const Layout = styled('div', {
 
     display: 'flex',
     flexDirection: 'column',
+    gap: '$10'
 })

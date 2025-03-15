@@ -4,7 +4,7 @@ import { styled } from "../../stitches.config";
 export const Text = styled('p', {
     fontFamily: '$inter',
     fontWeight: '$regular',
-    lineHeight: '$base',
+    lineHeight: '$tall',
     margin: 0,
     color: '$CodGray900',
 
