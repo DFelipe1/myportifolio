@@ -4,14 +4,12 @@ import { ArrowCircleLeft } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
 import { AboutContainer, AboutContent, Carrer } from "./styles";
+import { BackGo } from "@/components/BackGo";
 
 export default function About() {
     return (
         <AboutContainer>
-            <Link href='/'>
-                <ArrowCircleLeft size={20} />
-                <span>Voltar</span>
-            </Link>
+            <BackGo href='/' />
 
             <Heading as={'h1'} size={"lg"}>Sobre mim</Heading>
 
