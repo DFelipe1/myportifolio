@@ -9,6 +9,7 @@ export const HomeContainer = styled('main', {
 })
 
 export const Hero = styled('div', {
+    maxWidth: '500px',
     display: 'flex',
     flexDirection: 'column',
     gap: '$4',
@@ -17,5 +18,10 @@ export const Hero = styled('div', {
         display: 'flex',
         flexDirection: 'column',
         gap: '$2',
+    },
+
+    p: {
+        lineHeight: '$short',
+        fontWeight: '$light',
     }
 })
