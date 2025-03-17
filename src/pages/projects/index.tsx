@@ -2,8 +2,9 @@ import { Heading } from "@/styles/Heading";
 import { Text } from "@/styles/Text";
 import { ArrowCircleLeft } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
-import { Divider, ListProjects, ListWrapper, ProjectCard, ProjectContainer, SectionProjects } from "./styles";
+import { ListProjects, ListWrapper, ProjectCard, ProjectContainer, SectionProjects } from "./styles";
 import { BackGo } from "@/components/BackGo";
+import { Divider } from "@/styles/Divider";
 
 export default function Projects() {
   return (
