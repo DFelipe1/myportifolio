@@ -1,17 +1,16 @@
-import { useRouter } from "next/router"
 import { Heading } from "@/styles/Heading"
-import { Text } from "@/styles/Text"
 import { PostContainer, PostHeader } from "@/styles/Post"
+import { Text } from "@/styles/Text"
+import { useRouter } from "next/router"
 
-export default function Blogger(){
+export default function Project() {
 
     const router = useRouter()
     const { slug } = router.query
-
-    return(
+    return (
         <PostContainer>
             <PostHeader>
-                <Heading>Blog</Heading>
+                <Heading>Name project</Heading>
                 <Text as={'span'}>2025</Text>
             </PostHeader>
 
