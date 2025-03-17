@@ -3,7 +3,7 @@ import { NextSeo } from "next-seo";
 import { ArrowCircleRight } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/Button";
 
-import { Hero, HomeContainer, NavContainer } from "./styles";
+import { Hero, HomeContainer } from "./styles";
 import { Text } from "@/styles/Text";
 import { Tag } from "@/styles/Tag";
 import { Heading } from "@/styles/Heading";
@@ -30,18 +30,15 @@ export default function Home(){
                         <Heading as='h1' size={"xl"}>David Felipe</Heading>
                         <Heading as='span' size={"sm"} fontWeight={"bold"}>ui/ux Designer & Desenvolvdor web</Heading>
                     </div>
-                    <Text>ui/ux Designer & Desenvolvdor web</Text>
+                    <Text>
+                        Apaixonado por criar interfaces intuitivas e experiências digitais envolventes. 
+                        Combinando criatividade e tecnologia, transformo ideias em soluções funcionais e 
+                        atraentes. 
+                    </Text>
 
                     <ShortcutHome/>
                    
                 </Hero>
-{/* 
-                <NavContainer>
-                    <Link href={'/about'}>Sobre mim</Link>
-                    <Link href={'/projects'}>Projetos</Link>
-                    <Link href={'/blog'}>Blog</Link>
-                </NavContainer> */}
-
             </HomeContainer>
             
         </>
