@@ -58,22 +58,50 @@ export const ListProjects = styled('div', {
     flexDirection: 'column',
     gap: '$4',
 
+})
+
+export const ProjectBox = styled('div', {
+    width: '100%',
+    padding: '$2',
+    borderBottom: '2px solid rgba(0, 0, 0, 0)',
+    transition: '0.5s',
+    borderRadius: '$md',
+
     a: {
         color: '$CodGray950',
         textDecoration: 'none',
-        transition: 'border 0.3s',
-        borderBottom: '2px solid rgba(0, 0, 0, 0)',
-        width: 'fit-content',
-
-        '&:hover': {
-            color: '$CodGray700',
-            borderBottom: '2px solid $CodGray700',
-        },
+        
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
 
         strong: {
             fontWeight: '$semibold',
-            fontSize: '$md',
-        },
+            fontSize: '$lg',
+            color: '$CodGray900',
+        }
     },
+
+    '&:hover': {
+        backgroundColor: '$AlbescentWhite200',
+    },
+})
+
+export const Box = styled('div', {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '$2',
+    marginTop: '$2',
+    span: {
+        textAlign: 'right',
+        fontSize: '$sm',
+        fontWeight: '$light',
+    },
+
+    div: {
+        display: 'flex',
+        gap: '$1',
+    }
 })
 
