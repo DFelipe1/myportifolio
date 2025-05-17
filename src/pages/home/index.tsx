@@ -10,6 +10,7 @@ import { Heading } from "@/styles/Heading";
 import Link from "next/link";
 import { ShortcutHome } from "@/components/ShortcutHome";
 
+
 export default function Home(){
 
     const hourActual = new Date().getHours()
