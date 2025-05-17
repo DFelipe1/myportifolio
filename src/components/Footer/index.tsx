@@ -1,23 +1,38 @@
+import Link from "next/link";
 import { FooterContainer } from "./styles";
 
 export function Footer() {
+
+    const socials = [
+        {
+            name: 'email',
+            url: 'mailto:felipe30.10@outlook.com'
+        },
+        {
+            name: 'instagram',
+            url: 'https://www.instagram.com/feeh.dev/'
+        },
+        {
+            name: 'linkedin',
+            url: 'https://www.linkedin.com/in/lipedev/'
+        },
+        {
+            name: 'behance',
+            url: 'https://www.behance.net/feeh7k'
+        },
+        {
+            name: 'github',
+            url: 'https://github.com/DFelipe1/'
+        }
+    ]
+
     return (
         <FooterContainer>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    email
-                </a>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    instagram
-                </a>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    linkedin
-                </a>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    behance
-                </a>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    github
-                </a>
+                {socials.map((social, index) => (
+                    <Link key={index} href={social.url}>
+                        {social.name}
+                    </Link>
+                ))}
             </FooterContainer>
     )
 }
