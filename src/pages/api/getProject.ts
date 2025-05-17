@@ -1,4 +1,6 @@
 import { notion } from "@/lib/notion";
+import { NotionDatabaseResponse } from "@/types/notionDatabaseResponse";
+import { create } from "domain";
 import { NextApiRequest, NextApiResponse } from "next";
 import { NotionToMarkdown } from "notion-to-md";
 
@@ -14,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         filter:{
          or: [
           {
-            property: 'title',
+            property: 'slug',
             rich_text: {
               equals: slug
             }
@@ -23,17 +25,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
       });
 
+
       const n2m = new NotionToMarkdown({ notionClient: notion });
 
       const pageId = response.results[0].id;
 
       const mdblocks = await n2m.pageToMarkdown(pageId);
       const mdString = n2m.toMarkdownString(mdblocks);
-      console.log(mdString.parent);
+
+       const typedResponse = (response as unknown) as NotionDatabaseResponse;
 
       return res.status(200).json({
-        id: response.results[0].id,
-        title: response.results[0].properties.title.title[0]?.text.content,
+        title: typedResponse.results[0].properties.name.title[0]?.text.content,
+        cover: typedResponse.results[0].properties["Files & media"].files[0]?.file.url,
+        createdDate: typedResponse.results[0].properties['created date'].date.start,
+        tags: typedResponse.results[0].properties.tags.multi_select.map((tag) => tag.name),
+        prototype: typedResponse.results[0].properties.prototipo.url,
+        code: typedResponse.results[0].properties['Code view'].url,
+        deploy: typedResponse.results[0].properties['link deploy'].url,
         content: mdString.parent,
       })
       
