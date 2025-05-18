@@ -105,3 +105,10 @@ export const Box = styled('div', {
     }
 })
 
+export const Cover = styled('img', {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    borderRadius: '$md',
+    marginBottom: '$2',
+})

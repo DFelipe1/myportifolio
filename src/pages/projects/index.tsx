@@ -80,7 +80,7 @@ export default function Projects() {
                     <Text as={'span'}>{project.createdDate}</Text>
                     <div>
                       {project.tags.map((tag) => (
-                        <Tag as={'span'}>{tag}</Tag>
+                        <Tag background={"true"} as={'span'}>{tag}</Tag>
                       ))}
                     </div>
                   </Box>

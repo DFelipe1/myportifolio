@@ -8,9 +8,12 @@ export const HeaderContainer = styled('header', {
 
     a: {
         textDecoration: 'none',
-        color: '$CodGray950',
+        color: '$AlbescentWhite100',
         fontFamily: '$jetbrains_mono',
-        fontSize: '$lg'
+        fontSize: '$2xl',
+        fontWeight: '$bold',
+        padding: '0 $3',
+        backgroundColor: '$CodGray700',
     },
 
     button: {

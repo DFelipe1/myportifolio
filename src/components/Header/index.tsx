@@ -1,9 +1,7 @@
-import Image from "next/image";
-
-
 import { HeaderContainer } from "./styles";
 import { Command } from "@phosphor-icons/react/dist/ssr";
 import { useKBar } from "kbar";
+import Link from "next/link";
 
 export function Header(){
 
@@ -11,12 +9,7 @@ export function Header(){
 
     return(
         <HeaderContainer>
-            <Image 
-                src='/logo.png' 
-                alt=" " 
-                width={40}
-                height={40}
-            />
+        <Link href={'/'}>D</Link>
 
         <button onClick={() => query.toggle() }>
             <Command size={24}/>
