@@ -23,7 +23,7 @@ export default function Blog() {
         useEffect(() => {
           async function fetchPosts() {
             try {
-              const res = await fetch('/api/getArticleBlog').then((res) => res.json());
+              const res = await fetch('/api/getArticlesBlog').then((res) => res.json());
               setArticles(res);
             } catch (err) {
               console.error('Erro ao buscar posts:', err);
