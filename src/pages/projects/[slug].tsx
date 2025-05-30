@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import { Box, Cover } from "./styles";
 import { BackGo } from "@/components/BackGo";
+import { Skeleton } from "@/components/Skeleton";
 
 interface ProjectProps {
     title: string
@@ -49,14 +50,45 @@ export default function Project() {
     }, []);
 
     if (!project) {
-        return <div>Loading...</div>
+        return (
+            <PostContainer>
+            <BackGo href='/projects' />
+            <PostHeader>
+                <div>
+                  
+                        <Skeleton css={{width: 150, height: "30px"}} />
+                  
+            
+                    <Box>
+                        <Skeleton css={{width: 30, height: "20px"}} />
+                        <Skeleton css={{width: 30, height: "20px"}} />
+                        <Skeleton css={{width: 30, height: "20px"}} />
+                    </Box>
+                </div>
+                <Box>
+                    
+                    <Skeleton css={{width: 100, height: "20px"}} />
+
+                    <Skeleton css={{width: 100, height: "20px"}} />
+                    <Skeleton css={{width: 100, height: "20px"}} />
+                
+                </Box>
+            </PostHeader>
+        
+            <Box className="content" css={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <Skeleton css={{ height: '200px', width: '100%' }}/>
+            </Box>
+
+        </PostContainer>
+        )
     }
     
     return (
         <PostContainer>
-            <BackGo href='/' />
+            <BackGo href='/projects' />
             <PostHeader>
                 <div>
+                   
                     <Heading>{project.title}</Heading>
                     <Box>
                         {project.tags.map((tag, index) => (
@@ -65,7 +97,9 @@ export default function Project() {
                     </Box>
                 </div>
                 <Box>
+                
                     <Text as={'span'}>{project.createdDate}</Text>
+
                     <ActionsBox>
                         {project.deploy && (
                             <Link href={project.deploy} target="_blank">
@@ -88,6 +122,7 @@ export default function Project() {
             
 
             <Cover src={project.cover} alt="imagem do projeto"/>
+
 
             <div className="content">
                 <Text>

@@ -7,6 +7,7 @@ import { BackGo } from "@/components/BackGo";
 import { Divider } from "@/styles/Divider";
 import { useEffect, useState } from "react";
 import { Tag } from "@/styles/Tag";
+import { Skeleton } from "@/components/Skeleton";
 
 interface ProjectsProps {
     projectId: string,
@@ -69,6 +70,43 @@ export default function Projects() {
       <SectionProjects>
         {/* <Heading as={'h2'} size={'sm'}>Projetos Relevantes</Heading> */}
         <ListProjects>
+          {projects.length === 0 && (
+            <>
+              <ProjectBox >
+                <a>
+                  <Skeleton css={{ height: '30px', width: '200px' }} />
+                  <Box>
+                    <Skeleton css={{ height: '20px', width: '50px' }} />
+                    <div>
+                      <Skeleton css={{ height: '20px', width: '30px' }} />
+                    </div>
+                  </Box>
+                </a>
+              </ProjectBox>
+              <ProjectBox >
+                <a>
+                  <Skeleton css={{ height: '30px', width: '200px' }} />
+                  <Box>
+                    <Skeleton css={{ height: '20px', width: '50px' }} />
+                    <div>
+                      <Skeleton css={{ height: '20px', width: '30px' }} />
+                    </div>
+                  </Box>
+                </a>
+              </ProjectBox>
+              <ProjectBox >
+                <a>
+                  <Skeleton css={{ height: '30px', width: '200px' }} />
+                  <Box>
+                    <Skeleton css={{ height: '20px', width: '50px' }} />
+                    <div>
+                      <Skeleton css={{ height: '20px', width: '30px' }} />
+                    </div>
+                  </Box>
+                </a>
+              </ProjectBox>
+            </>
+          )}
           {projects.map((project) => (
             <>
               <ProjectBox key={project.projectId}>

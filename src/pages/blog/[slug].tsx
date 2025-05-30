@@ -7,6 +7,8 @@ import { Box } from "@/components/Box";
 import { Tag } from "@/styles/Tag";
 import { Cover } from "../projects/styles";
 import Markdown from "react-markdown";
+import { Skeleton } from "@/components/Skeleton";
+import { BackGo } from "@/components/BackGo";
 
 interface ArticleProps {
     title: string
@@ -44,10 +46,26 @@ export default function Article(){
         }, []);
     
         if (!article) {
-            return <div>Loading...</div>
+            return (
+                <PostContainer>
+                    <BackGo href='/blog' />
+                    <PostHeader>
+                        <div>
+                            <Skeleton css={{ height: '30px', width: '200px' }}/>
+                        </div>
+                        <Skeleton css={{ height: '20px', width: '100px' }}/>
+                    </PostHeader>
+
+                    
+                    <Box className="content" css={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                        <Skeleton css={{ height: '20px', width: '100%' }}/>
+                        <Skeleton css={{ height: '20px', width: '100%' }}/>
+                        <Skeleton css={{ height: '20px', width: '100%' }}/>
+                    </Box>
+                </PostContainer>
+            )
         }
         
-        console.log('Article:', article);
 
     return(
         <PostContainer>

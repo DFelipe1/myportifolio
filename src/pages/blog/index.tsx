@@ -7,6 +7,8 @@ import { Divider } from "@/styles/Divider";
 import { useEffect, useState } from "react";
 import { Tag } from "@/styles/Tag";
 import { Box } from "@/components/Box";
+import { Skeleton } from "@/components/Skeleton";
+import { addAbortListener } from "stream";
 
 interface ArticlesProps{
     articleId: string,
@@ -34,19 +36,7 @@ export default function Blog() {
           fetchPosts();
         }, []);
 
-        if(!articles || articles.length === 0) {
-            return (
-                 <BlogContainer>
-                <BackGo href='/' />
-                
-                <Heading as={'h1'}>Blog</Heading>
-                <Box css={{ display: 'flex', height:'40vh' , flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-                    <Text>Ainda estou escrevendo ou buscando coragem para postar 😅.</Text>
-                    <Text>Volte mais tarde!</Text>
-                </Box>
-            </BlogContainer>
-            )
-        }
+
 
     return (
         <BlogContainer>
@@ -55,6 +45,48 @@ export default function Blog() {
             <Heading as={'h1'}>Blog</Heading>
 
             <BlogList>
+                {/* Loading state */}
+                {!articles && (
+                    <>
+                        <Box css={{ display: 'flex' , flexDirection: 'column', gap: '16px'}}>
+                            <Box css={{ width: '40%'}}>
+                                <Skeleton css={{ height: '30px'}}/>
+                            </Box>
+                            <Box css={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '8px'}}>
+                                <Skeleton css={{ height: '20px'}}/>
+                                <Skeleton css={{ height: '20px'}}/>
+                            </Box>
+                        </Box>
+                        <Box css={{ display: 'flex' , flexDirection: 'column', gap: '16px'}}>
+                            <Box css={{ width: '40%'}}>
+                                <Skeleton css={{ height: '30px'}}/>
+                            </Box>
+                            <Box css={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '8px'}}>
+                                <Skeleton css={{ height: '20px'}}/>
+                                <Skeleton css={{ height: '20px'}}/>
+                            </Box>
+                        </Box>
+                        <Box css={{ display: 'flex' , flexDirection: 'column', gap: '16px'}}>
+                            <Box css={{ width: '40%'}}>
+                                <Skeleton css={{ height: '30px'}}/>
+                            </Box>
+                            <Box css={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '8px'}}>
+                                <Skeleton css={{ height: '20px'}}/>
+                                <Skeleton css={{ height: '20px'}}/>
+                            </Box>
+                        </Box>
+                    </>
+                )}
+
+                {/* No articles state */}
+                {articles.length === 0 && (
+                    <Box css={{ display: 'flex', height:'40vh' , flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+                        <Text>Ainda estou escrevendo ou buscando coragem para postar 😅.</Text>
+                        <Text>Volte mais tarde!</Text>
+                    </Box>
+                )}
+
+                {/* Articles list */}
                 {articles.map((article) => (
                     <div>
                         <BlogLinkLine key={article.articleId}>
