@@ -6,6 +6,7 @@ import { Text } from "@/styles/Text";
 import { Divider } from "@/styles/Divider";
 import { useEffect, useState } from "react";
 import { Tag } from "@/styles/Tag";
+import { Box } from "@/components/Box";
 
 interface ArticlesProps{
     articleId: string,
@@ -32,6 +33,20 @@ export default function Blog() {
       
           fetchPosts();
         }, []);
+
+        if(!articles || articles.length === 0) {
+            return (
+                 <BlogContainer>
+                <BackGo href='/' />
+                
+                <Heading as={'h1'}>Blog</Heading>
+                <Box css={{ display: 'flex', height:'40vh' , flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+                    <Text>Ainda estou escrevendo ou buscando coragem para postar 😅.</Text>
+                    <Text>Volte mais tarde!</Text>
+                </Box>
+            </BlogContainer>
+            )
+        }
 
     return (
         <BlogContainer>
