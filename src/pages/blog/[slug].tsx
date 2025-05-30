@@ -2,22 +2,75 @@ import { useRouter } from "next/router"
 import { Heading } from "@/styles/Heading"
 import { Text } from "@/styles/Text"
 import { PostContainer, PostHeader } from "@/styles/Post"
+import { useEffect, useState } from "react";
+import { Box } from "@/components/Box";
+import { Tag } from "@/styles/Tag";
+import { Cover } from "../projects/styles";
+import Markdown from "react-markdown";
 
-export default function Blogger(){
+interface ArticleProps {
+    title: string
+    cover: string
+    createdDate: string
+    tags: string[]
+    content: string
+}
 
-    const router = useRouter()
-    const { slug } = router.query
+export default function Article(){
+
+    const [article, setArticle] = useState<ArticleProps>();
+    
+        
+        const router = useRouter()
+        
+        useEffect(() => {
+            const { slug } = router.query;
+            if (!slug) {
+                router.push('/blog');
+            };
+            async function fetchPosts() {
+                try {
+                    const res = await fetch('/api/getArticleContent', {
+                        method: 'POST',
+                        body: JSON.stringify({ slug: slug }),
+                    }).then((res) => res.json());
+                    setArticle(res);
+                } catch (err) {
+                    console.error('Erro ao buscar posts:', err);
+                }
+        }
+    
+        fetchPosts();
+        }, []);
+    
+        if (!article) {
+            return <div>Loading...</div>
+        }
+        
+        console.log('Article:', article);
 
     return(
         <PostContainer>
             <PostHeader>
-                <Heading>Blog</Heading>
-                <Text as={'span'}>2025</Text>
+                 <div>
+                    <Heading>{article.title}</Heading>
+                    <Box>
+                        {article.tags.map((tag, index) => (
+                            <Tag css={{ width: 'fit-content' }} background={"true"} key={index} as={'span'}>{tag}</Tag>
+                        ))}
+                    </Box>
+                </div>
+                <Text as={'span'}>{article.createdDate}</Text>
             </PostHeader>
 
+            <Cover src={article.cover} alt="imagem do projeto"/>
+            
             <div className="content">
-                <Text>{slug}</Text>
-                <img src="https://www.alura.com.br/artigos/assets/navegacao-next-js-utilizando-rotas-dinamicas/imagem6.png" alt="" />
+                <Text>
+                    <Markdown>
+                        {article.content}
+                    </Markdown>
+                </Text>
             </div>
         </PostContainer>
     )
