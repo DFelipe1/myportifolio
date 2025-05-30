@@ -34,8 +34,6 @@ export default function Projects() {
       fetchPosts();
     }, []);
 
-    console.log(projects);
-
   return (
     <ProjectContainer>
       <BackGo href='/' />

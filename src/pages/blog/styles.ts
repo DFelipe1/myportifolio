@@ -13,21 +13,51 @@ export const BlogList = styled('div', {
     flexDirection: 'column',
     gap: '$4',
 
-    a: {
-        color: '$CodGray950',
-        textDecoration: 'none',
-        transition: 'border 0.3s',
-        borderBottom: '2px solid rgba(0, 0, 0, 0)',
-        width: 'fit-content',
+})
 
-        '&:hover': {
-            color: '$CodGray700',
-            borderBottom: '2px solid $CodGray700',
-        },
+export const BlogLinkLine = styled('div', {
+    padding: '$2 0',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '$1',
 
-        strong: {
-            fontWeight: '$semibold',
-            fontSize: '$md',
+    div: {
+        display: 'flex',
+        gap: '$1',
+        width: '100%',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        a: {
+            display: 'flex',
+            gap: '$4',
+            alignItems: 'center',
+            color: '$CodGray950',
+            textDecoration: 'none',
+          
+            width: 'fit-content',
+    
+            '&:hover': {
+                strong: {
+                    color: '$CodGray700',
+                    borderBottom: '1px solid $CodGray700',
+                }
+            },
+    
+            strong: {
+                fontWeight: '$semibold',
+                fontSize: '$md',
+                transition: 'border 0.3s ease-in-out',
+                borderBottom: '1px solid rgba(0, 0, 0, 0)',
+            },
+            span: {
+                color: '$CodGray700',
+            }
         },
     },
+
+
+    p: {
+        color: '$CodGray700',
+        fontWeight: '$light',
+    }
 })

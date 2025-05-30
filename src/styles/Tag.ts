@@ -1,6 +1,7 @@
 import { styled } from "../../stitches.config";
 
 export const Tag = styled('span', {
+    width: 'fit-content',
     fontFamily: '$jetbrains_mono',
     fontSize: '$md',
     fontWeight: '$semibold',
@@ -10,6 +11,7 @@ export const Tag = styled('span', {
     variants: {
         background: {
             true: {
+                fontSize: '$sm',
                 backgroundColor: '$CodGray700',
                 padding: '$1 $2',
                 borderRadius: '$full',
