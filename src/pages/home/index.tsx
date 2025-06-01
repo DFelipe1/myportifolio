@@ -1,13 +1,9 @@
-import { useState } from "react";
 import { NextSeo } from "next-seo";
-import { ArrowCircleRight } from "@phosphor-icons/react/dist/ssr";
-import { Button } from "@/components/Button";
 
-import { Hero, HomeContainer } from "./styles";
+import { Hero, HomeContainer } from "@/styles/Home";
 import { Text } from "@/styles/Text";
 import { Tag } from "@/styles/Tag";
 import { Heading } from "@/styles/Heading";
-import Link from "next/link";
 import { ShortcutHome } from "@/components/ShortcutHome";
 
 

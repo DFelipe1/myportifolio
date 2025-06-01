@@ -1,6 +1,5 @@
 import { ActionImpl, KBarAnimator, KBarPortal, KBarPositioner, KBarProvider, KBarResults, KBarSearch, useMatches } from "kbar";
 import { forwardRef, ReactNode } from "react";
-import { styled } from "../../../stitches.config";
 import { Box } from "../Box";
 import { Article, Code, CopySimple, Envelope, Lightbulb, UserCircle } from "@phosphor-icons/react/dist/ssr";
 import { House } from "@phosphor-icons/react";

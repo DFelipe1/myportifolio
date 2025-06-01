@@ -3,7 +3,7 @@ import { Text } from "@/styles/Text";
 import { ArrowCircleLeft } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
-import { AboutContainer, AboutContent, Carrer } from "./styles";
+import { AboutContainer, AboutContent, Carrer } from "@/styles/About";
 import { BackGo } from "@/components/BackGo";
 
 export default function About() {

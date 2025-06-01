@@ -2,7 +2,7 @@ import { Heading } from "@/styles/Heading";
 import { Text } from "@/styles/Text";
 import { ArrowCircleLeft } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
-import { Box, ListProjects, ListWrapper, ProjectBox, ProjectCard, ProjectContainer, SectionProjects } from "./styles";
+import { Box, ListProjects, ListWrapper, ProjectBox, ProjectCard, ProjectContainer, SectionProjects } from "@/styles/Project";
 import { BackGo } from "@/components/BackGo";
 import { Divider } from "@/styles/Divider";
 import { useEffect, useState } from "react";

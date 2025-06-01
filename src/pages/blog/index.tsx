@@ -1,6 +1,6 @@
 import { BackGo } from "@/components/BackGo";
 import { Heading } from "@/styles/Heading";
-import { BlogContainer, BlogLinkLine, BlogList } from "./styles";
+import { BlogContainer, BlogLinkLine, BlogList } from "@/styles/Blog";
 import Link from "next/link";
 import { Text } from "@/styles/Text";
 import { Divider } from "@/styles/Divider";
@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import { Tag } from "@/styles/Tag";
 import { Box } from "@/components/Box";
 import { Skeleton } from "@/components/Skeleton";
-import { addAbortListener } from "stream";
 
 interface ArticlesProps{
     articleId: string,

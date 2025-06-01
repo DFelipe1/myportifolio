@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
-import { Box, Cover } from "./styles";
+import { Box, Cover } from "@/styles/Project";
 import { BackGo } from "@/components/BackGo";
 import { Skeleton } from "@/components/Skeleton";
 

@@ -5,7 +5,7 @@ import { PostContainer, PostHeader } from "@/styles/Post"
 import { useEffect, useState } from "react";
 import { Box } from "@/components/Box";
 import { Tag } from "@/styles/Tag";
-import { Cover } from "../projects/styles";
+import { Cover } from "@/styles/Project";
 import Markdown from "react-markdown";
 import { Skeleton } from "@/components/Skeleton";
 import { BackGo } from "@/components/BackGo";
