@@ -1,40 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 👨‍💻 Meu Portfólio Pessoal
 
-## Getting Started
+Este é o repositório do meu portfólio pessoal, desenvolvido com o objetivo de apresentar meus projetos, habilidades e trajetória como desenvolvedor.  
+Foi uma jornada repleta de aprendizados e desafios, onde explorei novas tecnologias e aprofundei meus conhecimentos em desenvolvimento web.
 
-First, run the development server:
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- **Next.js** – minha primeira experiência com este framework poderoso.
+- **Stitches** – CSS-in-JS utilizado para estilização moderna e organizada.
+- **Kbar** – barra de comando acessível via teclado, melhora a usabilidade.
+- **Notion API** – utilizado como CMS para atualizar o conteúdo do portfólio com facilidade.
+
+---
+
+## 🎯 Funcionalidades
+
+- Apresentação dos meus projetos com links e descrições.
+- Seção "Sobre mim" com detalhes da minha trajetória.
+- Sistema de conteúdo dinâmico com Notion integrado.
+- Barra de comandos (Kbar) para navegação rápida.
+- Interface responsiva e acessível.
+
+---
+
+## 🛠️ Como rodar o projeto localmente
 
 ```bash
+# Clone o repositório
+git clone https://github.com/DFelipe1/myportifolio.git
+
+# Acesse a pasta do projeto
+cd myportifolio
+
+# Instale as dependências
+npm install
+
+# Rode o projeto
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📌 Observações
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- Este projeto está em constante evolução.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Foi pensado para refletir quem sou como designer e desenvolvedor.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+- Feedbacks são sempre bem-vindos! Fique à vontade para abrir uma issue.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🙏 Agradecimentos
 
-To learn more about Next.js, take a look at the following resources:
+Agradeço a todas as pessoas e comunidades que compartilham conhecimento e me ajudaram a crescer nesse processo.
+Esse portfólio é resultado de muita curiosidade, tentativa e erro, café e amor pelo que faço. 💙
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Sobre mim 👨‍
+![Dfelipe1](https://github.com/DFelipe1.png)
 
-## Deploy on Vercel
+Meu nome é David Felipe, sou um entusiasta do desenvolvimento web com uma paixão por criar soluções interativas e envolventes. Este projeto reflete não apenas minhas habilidades técnicas, mas também meu compromisso com o aprendizado contínuo. Convido você a explorar o código e compartilhar suas ideias. Juntos, podemos tornar este aplicativo ainda mais incrível! 🚀
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[![portfolio](https://img.shields.io/badge/meu_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://myportfolio-nu-nine-94.vercel.app)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lipedev/)
