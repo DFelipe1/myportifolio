@@ -23,5 +23,10 @@ export const Hero = styled('div', {
     p: {
         lineHeight: '$short',
         fontWeight: '$light',
+    },
+
+    '@lg': {
+        maxWidth: '700px',
     }
+   
 })

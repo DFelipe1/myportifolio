@@ -28,11 +28,11 @@ export function Footer() {
 
     return (
         <FooterContainer>
-                {socials.map((social, index) => (
-                    <Link key={index} href={social.url}>
-                        {social.name}
-                    </Link>
-                ))}
-            </FooterContainer>
+            {socials.map((social, index) => (
+                <Link key={index} href={social.url}>
+                    {social.name}
+                </Link>
+            ))}
+        </FooterContainer>
     )
 }

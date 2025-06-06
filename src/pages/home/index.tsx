@@ -21,13 +21,40 @@ export default function Home(){
             <HomeContainer>
                 <Hero>
                     <div>
-                        <Tag>
+                        <Tag css={{
+                            '@lg': { fontSize: '$2xl' },
+                        }}>
                             {hourActual > 0 && hourActual < 12 ? 'Bom dia' : hourActual < 19 ? 'Boa tarde' : 'Boa noite'}! Eu sou o
                         </Tag>
-                        <Heading as='h1' size={"xl"}>David Felipe</Heading>
-                        <Heading as='span' size={"sm"} fontWeight={"bold"}>ui/ux Designer & Desenvolvdor web</Heading>
+                        <Heading 
+                            as='h1' 
+                            size={"md"}
+                            css={{
+                                '@sm': { fontSize: '$6xl' },
+                                '@lg': { fontSize: '$8xl' },
+                            }}
+                        >
+                            David Felipe
+                        </Heading>
+
+                        <Heading 
+                            as='span' 
+                            size={"sm"} 
+                            fontWeight={"bold"} 
+                            css={{
+                                '@lg': { fontSize: '$4xl' },
+                            }}
+                        >
+                            ui/ux Designer & Desenvolvdor web
+                        </Heading>
                     </div>
-                    <Text>
+                    <Text
+                        size={"sm"}
+                        css={{
+                            '@sm': { fontSize: '$md' },
+                            '@lg': { fontSize: '$xl' },
+                        }}
+                    >
                         Apaixonado por criar interfaces intuitivas e experiências digitais envolventes. 
                         Combinando criatividade e tecnologia, transformo ideias em soluções funcionais e 
                         atraentes. 
