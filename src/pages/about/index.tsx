@@ -11,7 +11,15 @@ export default function About() {
         <AboutContainer>
             <BackGo href='/' />
 
-            <Heading as={'h1'} size={"lg"}>Sobre mim</Heading>
+            <Heading 
+                as={'h1'} 
+                size={"md"}
+                css={{
+                    '@xs': { fontSize: '$6xl'}
+                }}
+            >
+                Sobre mim
+            </Heading>
 
             <AboutContent>
                 <Image  

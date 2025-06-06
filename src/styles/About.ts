@@ -23,19 +23,41 @@ export const AboutContainer = styled('div', {
 export const AboutContent = styled('div', {
     flex: 1,
     display: 'flex',
+    flexDirection: 'column',
     gap: '$8',
 
     img: {
+        width: '100%',
         borderRadius: '$md',
         mixBlendMode: 'luminosity',
         objectFit: 'cover',
     },
 
     div: {
-        width: '60%',
+        width: '100%',
         display: 'flex',
         flexDirection: 'column',
         gap: '$4',
+    },
+
+    '@sm': {
+        flexDirection: 'row',
+        div: {
+            width: '60%',
+        },
+         img: {
+            width: '400px',
+        },
+    },
+
+    '@lg': {
+        img: {
+            width: '500px',
+            height: '500px',
+        },
+        div: {
+            width: '50%',
+        },
     }
 })
 
