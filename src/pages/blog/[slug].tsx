@@ -69,19 +69,31 @@ export default function Article(){
 
     return(
         <PostContainer>
+            <BackGo href='/blog' />
             <PostHeader>
                  <div>
-                    <Heading>{article.title}</Heading>
+                    <Heading
+                        as={'h1'}
+                        size={"sm"}
+                        css={{
+                            width: '100%',
+                            '@lg': { fontSize: '$6xl' }
+                        }}
+                    >
+                        {article.title}
+                    </Heading>
                     <Box>
                         {article.tags.map((tag, index) => (
                             <Tag css={{ width: 'fit-content' }} background={"true"} key={index} as={'span'}>{tag}</Tag>
                         ))}
                     </Box>
                 </div>
-                <Text as={'span'}>{article.createdDate}</Text>
+                <Text as={'span'} css={{ minWidth: 'fit-content' }}>{article.createdDate}</Text>
             </PostHeader>
-
-            <Cover src={article.cover} alt="imagem do projeto"/>
+            
+            {article.cover && (
+                <Cover src={article.cover} alt="imagem do projeto"/>
+            )}
             
             <div className="content">
                 <Text>

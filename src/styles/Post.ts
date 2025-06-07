@@ -28,10 +28,20 @@ export const PostContainer = styled('main', {
 export const PostHeader = styled('div', {
     width: '100%',
     display: 'flex',
+    flexDirection: 'column-reverse',
+    gap: '$2',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
 
-    
+    div: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '$2',
+    },
+
+    '@md': {
+        flexDirection: 'row',
+    }
 })
 
 export const ActionsBox = styled('div', {

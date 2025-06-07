@@ -1,3 +1,4 @@
+import { minify } from "next/dist/build/swc/generated-native";
 import { styled } from "../../stitches.config";
 
 export const BlogContainer = styled('main', {
@@ -23,18 +24,17 @@ export const BlogLinkLine = styled('div', {
 
     div: {
         display: 'flex',
+        flexDirection: 'column',
         gap: '$1',
         width: '100%',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        
         a: {
+            width: '100%',
             display: 'flex',
             gap: '$4',
             alignItems: 'center',
             color: '$CodGray950',
             textDecoration: 'none',
-          
-            width: 'fit-content',
     
             '&:hover': {
                 strong: {
@@ -44,14 +44,39 @@ export const BlogLinkLine = styled('div', {
             },
     
             strong: {
+                with: '100%',
                 fontWeight: '$semibold',
-                fontSize: '$md',
+                fontSize: '$sm',
                 transition: 'border 0.3s ease-in-out',
                 borderBottom: '1px solid rgba(0, 0, 0, 0)',
+
+                '@xs': {
+                    fontSize: '$md',
+                },
+
+                '@lg': {
+                    fontSize: '$xl',
+                }
             },
             span: {
+                minWidth: 'fit-content',
+                fontSize: '$xs',
                 color: '$CodGray700',
+
+                '@sm': {
+                    fontSize: '$sm',
+                },
+
+                '@lg': {
+                    fontSize: '$md',
+                }
             }
+        },
+
+        '@sm': {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
         },
     },
 

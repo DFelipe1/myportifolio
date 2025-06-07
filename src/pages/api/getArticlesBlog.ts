@@ -9,16 +9,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const databaseId = process.env.NOTION_DATABASE_BLOG_ID as string; 
         const response = await notion.databases.query({ 
             database_id: databaseId,
-            filter:{
-                or: [
-                    {
-                        property: 'publicked',
-                        checkbox: {
-                            equals: true
-                        }
-                    }
-                ],
-            },
+            // filter:{
+            //     or: [
+            //         {
+            //             property: 'publicked',
+            //             checkbox: {
+            //                 equals: true
+            //             }
+            //         }
+            //     ],
+            // },
             sorts: [
                 {
                     property: 'created date',

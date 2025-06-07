@@ -39,7 +39,16 @@ export default function Projects() {
     <ProjectContainer>
       <BackGo href='/' />
 
-      <Heading as={'h1'}>Trabalhos & Contribuições</Heading>
+      <Heading 
+        as={'h1'}
+        size={"sm"}
+        css={{
+          '@xs': { fontSize: '$4xl'},
+          '@lg': { fontSize: '$6xl'}
+        }}
+      >
+        Trabalhos & Contribuições
+      </Heading>
 
       {/* <SectionProjects>
         <Heading as={'h2'} size={'sm'}>melhores projetos</Heading>
@@ -107,6 +116,7 @@ export default function Projects() {
               </ProjectBox>
             </>
           )}
+          
           {projects.map((project) => (
             <>
               <ProjectBox key={project.projectId}>

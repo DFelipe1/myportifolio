@@ -2,6 +2,7 @@ import { styled } from "../../stitches.config";
 
 export const Tag = styled('span', {
     width: 'fit-content',
+    height: 'fit-content',
     fontFamily: '$jetbrains_mono',
     fontSize: '$md',
     fontWeight: '$semibold',
@@ -25,5 +26,6 @@ export const Tag = styled('span', {
 
     defaultVariants: {
     background: 'false',
+
   }
 })

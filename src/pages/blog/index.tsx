@@ -41,7 +41,15 @@ export default function Blog() {
         <BlogContainer>
             <BackGo href='/' />
             
-            <Heading as={'h1'}>Blog</Heading>
+            <Heading 
+                as={'h1'}
+                size={"md"}
+                css={{
+                    '@lg': { fontSize: '$6xl'}
+                }}
+            >
+                Blog
+            </Heading>
 
             <BlogList>
                 {/* Loading state */}
@@ -100,7 +108,22 @@ export default function Blog() {
                                 ))}
                            </div>
 
-                            <Text>{article.description}</Text>
+                            <Text
+                                css={{
+                                    display: '-webkit-box',
+                                    overflow: 'hidden',
+                                    WebkitLineClamp: 3,
+                                    WebkitBoxOrient: 'vertical',
+                                    lineHeight: '$short',
+                                    fontSize: '$sm',
+                                    fontWeight: '$light',
+
+                                    '@sm': {
+                                        fontSize: '$md',
+                                        lineHeight: '$base',
+                                    },
+                                }}
+                            >{article.description}</Text>
                             
                         </BlogLinkLine>
                         <Divider />

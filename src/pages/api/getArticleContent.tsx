@@ -35,8 +35,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
        const typedResponse = (response as unknown) as NotionDatabaseResponse;
 
-       console.log('Response from Notion:', typedResponse);
-
       return res.status(200).json({
         title: typedResponse.results[0].properties.name.title[0]?.text.content,
         cover: typedResponse.results[0].properties["Files & media"].files[0]?.file.url,

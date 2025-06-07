@@ -43,6 +43,7 @@ export default function Project() {
                 setProject(res);
             } catch (err) {
                 console.error('Erro ao buscar posts:', err);
+                 router.push('/projects')
             }
     }
 
@@ -89,7 +90,13 @@ export default function Project() {
             <PostHeader>
                 <div>
                    
-                    <Heading>{project.title}</Heading>
+                    <Heading
+                        as={'h1'}
+                        size={'md'}
+                        css={{ 
+                            '@md': { fontSize: '6xl' }
+                        }}
+                    >{project.title}</Heading>
                     <Box>
                         {project.tags.map((tag, index) => (
                             <Tag css={{ width: 'fit-content' }} background={"true"} key={index} as={'span'}>{tag}</Tag>

@@ -22,10 +22,24 @@ export default function NotFound() {
                 borderRadius: '$md',
             }
         }}>
-            <Heading as={'h1'} className="text-4xl font-bold">404 - Opss... cadê a pagina?</Heading>
-            <Text className="mt-4 text-lg">Desculpa, mas não encontramos essa pagina</Text>
+            <Heading as={'h1'} size={'sm'} css={{ 
+                '@md':{
+                    fontSize: '$5xl'
+                }
+            }}>
+                404 - Opss... cadê a pagina?
+            </Heading>
+            <Text size={'sm'} css={{
+                lineHeight: '$short',
+                '@md': {
+                    fontSize: '$md',
+                    lineHeight: '$base',
+                }
+            }}>
+                Desculpa, mas não encontramos essa pagina
+            </Text>
             <Link 
-             href="/" className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+             href="/">
                 voltar para o ínicio
             </Link>
         </Box>

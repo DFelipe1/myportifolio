@@ -68,6 +68,7 @@ export const ProjectBox = styled('div', {
     borderRadius: '$md',
 
     a: {
+        flex: '1',
         color: '$CodGray950',
         textDecoration: 'none',
         
@@ -77,9 +78,15 @@ export const ProjectBox = styled('div', {
         alignItems: 'center',
 
         strong: {
+            with: '100%',
             fontWeight: '$semibold',
-            fontSize: '$lg',
+            fontSize: '$md',
+            lineHeight: '$shorter',
             color: '$CodGray900',
+
+            '@xs': {
+                fontSize: '$lg',
+            }
         }
     },
 
@@ -94,14 +101,26 @@ export const Box = styled('div', {
     gap: '$2',
     marginTop: '$2',
     span: {
+        width: 'fit-content',
         textAlign: 'right',
-        fontSize: '$sm',
+        fontSize: '$xxs',
         fontWeight: '$light',
+
+        '@xs': {
+            fontSize: '$xs',
+        },
+
+        '@sm': {
+            fontSize: '$sm',
+        }
     },
 
     div: {
         display: 'flex',
         gap: '$1',
+        flexWrap: 'wrap',
+        width: '100%',
+        justifyContent: 'end',
     }
 })
 
