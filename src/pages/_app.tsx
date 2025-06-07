@@ -19,8 +19,16 @@ export default function App({ Component, pageProps }: AppProps) {
           openGraph={{
             type: 'website',
             locale: 'pt_BR',
-            url: 'https://Feeh.dev',
+            url: 'https://davidfelipe.dev',
             siteName: 'David Felipe Portfolio',
+            images: [
+               {
+                  url: '/static/avatar.jpeg',
+                  width: 1200,
+                  height: 630,
+                  alt: 'David Felipe',
+                },
+            ]
           }}
         />
       <Layout>

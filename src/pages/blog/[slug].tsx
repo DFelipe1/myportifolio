@@ -9,6 +9,7 @@ import { Cover } from "@/styles/Project";
 import Markdown from "react-markdown";
 import { Skeleton } from "@/components/Skeleton";
 import { BackGo } from "@/components/BackGo";
+import { NextSeo } from "next-seo";
 
 interface ArticleProps {
     title: string
@@ -69,6 +70,12 @@ export default function Article(){
 
     return(
         <PostContainer>
+            <NextSeo
+                title={article.title}
+                openGraph={{
+                    url: `https://davidfelipe.dev/blog/${router.query.slug}`,
+                }}
+            />
             <BackGo href='/blog' />
             <PostHeader>
                  <div>

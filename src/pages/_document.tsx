@@ -3,9 +3,10 @@ import { getCssText } from "../../stitches.config";
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="pt-BR">
       <Head >
         <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
+        <link rel="icon" href="/favicon/favicon.ico" />
       </Head>
       <body>
         <Main />

@@ -1,14 +1,17 @@
 import { Heading } from "@/styles/Heading";
 import { Text } from "@/styles/Text";
-import { ArrowCircleLeft } from "@phosphor-icons/react";
 import Image from "next/image";
-import Link from "next/link";
 import { AboutContainer, AboutContent, Carrer } from "@/styles/About";
 import { BackGo } from "@/components/BackGo";
+import { NextSeo } from "next-seo";
 
 export default function About() {
     return (
         <AboutContainer>
+            <NextSeo
+                title='Sobre | David Felipe'
+                description='Oi, eu sou o David Felipe! Minha jornada no mundo digital começou unindo design e tecnologia para criar experiências interativas.'
+            />
             <BackGo href='/' />
 
             <Heading 

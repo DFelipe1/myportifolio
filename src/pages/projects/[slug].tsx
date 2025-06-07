@@ -10,6 +10,7 @@ import Markdown from "react-markdown";
 import { Box, Cover } from "@/styles/Project";
 import { BackGo } from "@/components/BackGo";
 import { Skeleton } from "@/components/Skeleton";
+import { NextSeo } from "next-seo";
 
 interface ProjectProps {
     title: string
@@ -86,6 +87,12 @@ export default function Project() {
     
     return (
         <PostContainer>
+            <NextSeo
+                title={project.title}
+                openGraph={{
+                    url: `https://davidfelipe.dev/project/${router.query.slug}`,
+                }}
+            />
             <BackGo href='/projects' />
             <PostHeader>
                 <div>

@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Tag } from "@/styles/Tag";
 import { Box } from "@/components/Box";
 import { Skeleton } from "@/components/Skeleton";
+import { NextSeo } from "next-seo";
 
 interface ArticlesProps{
     articleId: string,
@@ -39,6 +40,13 @@ export default function Blog() {
 
     return (
         <BlogContainer>
+            <NextSeo
+                title='David Felipe | Blogs'
+                description='meu cantinho de anotações e estudos'
+                openGraph={{
+                    url: `https://davidfelipe.dev/blog`,
+                }}
+            />
             <BackGo href='/' />
             
             <Heading 

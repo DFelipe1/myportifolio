@@ -8,6 +8,7 @@ import { Divider } from "@/styles/Divider";
 import { useEffect, useState } from "react";
 import { Tag } from "@/styles/Tag";
 import { Skeleton } from "@/components/Skeleton";
+import { NextSeo } from "next-seo";
 
 interface ProjectsProps {
     projectId: string,
@@ -37,6 +38,13 @@ export default function Projects() {
 
   return (
     <ProjectContainer>
+      <NextSeo
+          title='David Felipe | Projetos'
+          description='Veja meus melhores projetos'
+          openGraph={{
+              url: `https://davidfelipe.dev/portfolio`,
+          }}
+      />
       <BackGo href='/' />
 
       <Heading 
