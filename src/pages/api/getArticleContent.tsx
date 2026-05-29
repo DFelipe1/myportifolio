@@ -1,6 +1,5 @@
 import { notion } from "@/lib/notion";
 import { NotionDatabaseResponse } from "@/types/notionDatabaseResponse";
-import { create } from "domain";
 import { NextApiRequest, NextApiResponse } from "next";
 import { NotionToMarkdown } from "notion-to-md";
 

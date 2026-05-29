@@ -45,7 +45,7 @@ export default function Home(){
                                 '@lg': { fontSize: '$4xl' },
                             }}
                         >
-                            ui/ux Designer & Desenvolvdor web
+                            ui/ux Designer & Desenvolvedor web
                         </Heading>
                     </div>
                     <Text

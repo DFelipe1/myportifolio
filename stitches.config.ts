@@ -31,9 +31,6 @@ export const {
       CodGray900: '#32322f',
       CodGray950: '#1c1c1a',
 
-      Affair500: '#9f82ca',
-      Affair600: '#8766b7',
-      Affair700: '#6a4c93',
     },
 
     fontSizes: {

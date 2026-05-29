@@ -1,34 +1,6 @@
 import { notion } from "@/lib/notion";
 import { NotionDatabaseResponse } from "@/types/notionDatabaseResponse";
-import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { create } from "domain";
 import { NextApiRequest, NextApiResponse } from "next";
-import { describe } from "node:test";
-
-
-// type Project = {
-//   projectId: string;
-//   name: string
-//   publicked: boolean,
-//   description: string,
-//   slug: { id: 'K%3B%3B%5D', type: 'rich_text', rich_text: [Array] },
-//   'Files & media': { id: 'K~Og', type: 'files', files: [Array] },
-//   prototipo: { id: 'R%5BuD', type: 'url', url: null },
-//   'Code view': {
-//     id: 'Rxyd',
-//     type: 'url',
-//     url: 'https://github.com/DFelipe1/RelogioWeb'
-//   },
-//   'link deploy': {
-//     id: 'muZI',
-//     type: 'url',
-//     url: 'https://relogio-acs3rbc5j-dfelipe1.vercel.app'
-//   },
-//   'created date': { id: 'n%7Dfh', type: 'date', date: [Object] },
-//   url: 'https://www.notion.so/Rel-gio-Web-1f53e8e5b7ae80e2b39deb04d0539986',
-//   public_url: null
-//   }
-
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   

@@ -1,6 +1,5 @@
 import { Heading } from "@/styles/Heading";
 import { Text } from "@/styles/Text";
-import { ArrowCircleLeft } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
 import { AboutContainer, AboutContent, Carrer } from "@/styles/About";
@@ -43,10 +42,10 @@ export default function About() {
                     </Text>
                 </div>
             </AboutContent>
-            <Carrer>
+            {/* <Carrer>
                 <Heading as={'h2'} size={'md'}>Carreira</Heading>
                 <span>Preciso de um emprego</span>
-            </Carrer>
+            </Carrer> */}
 
         </AboutContainer>
     )
