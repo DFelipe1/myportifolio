@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://myportfolio-nu-nine-94.vercel.app/sitemap.xml
