@@ -118,22 +118,22 @@ export default function Projects() {
           )}
           
           {projects.map((project) => (
-            <>
-              <ProjectBox key={project.projectId}>
+            <div key={project.projectId}>
+              <ProjectBox>
                 <Link href={`projects/${project.slug}`}>
                   <Text as={'strong'}>{project.name}</Text>
                   <Box>
                     <Text as={'span'}>{project.createdDate}</Text>
                     <div>
                       {project.tags.map((tag) => (
-                        <Tag background={"true"} as={'span'}>{tag}</Tag>
+                        <Tag background={"true"} as={'span'} key={tag}>{tag}</Tag>
                       ))}
                     </div>
                   </Box>
                 </Link>
               </ProjectBox>
               <Divider />
-            </>
+            </div>
           ))}
         </ListProjects>
       </SectionProjects>

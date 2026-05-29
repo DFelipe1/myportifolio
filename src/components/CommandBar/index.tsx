@@ -30,7 +30,7 @@ export function CommandBar({ children }: CommandBarProps) {
             shortcut: ["e"],
             keywords: "send-email",
             section: 'sugestões',
-            perform: () => (window.location.pathname = "contact"),
+            perform: () => (window.location.href = "mailto:felipe30.10@outlook.com"),
             icon: <Envelope size={20} weight="fill" />
         },
         {
