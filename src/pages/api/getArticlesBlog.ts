@@ -34,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           name: article.properties.name.title[0]?.text.content,
           description: article.properties.description.rich_text[0]?.text.content,
           slug: article.properties.slug.rich_text[0]?.text.content,
-          createdDate: article.properties['created date'].date.start,
+          createdDate: article.properties['created date'].date?.start ?? '',
           tags: article.properties.tags.multi_select.map((tag) => tag.name),
         }
       ));

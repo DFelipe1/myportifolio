@@ -38,7 +38,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(200).json({
         title: typedResponse.results[0].properties.name.title[0]?.text.content,
         cover: typedResponse.results[0].properties["Files & media"].files[0]?.file.url,
-        createdDate: typedResponse.results[0].properties['created date'].date.start,
+        createdDate: typedResponse.results[0].properties['created date'].date?.start ?? '',
         tags: typedResponse.results[0].properties.tags.multi_select.map((tag) => tag.name),
         content: mdString.parent,
       })

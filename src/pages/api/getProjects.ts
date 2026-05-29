@@ -56,7 +56,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           name: project.properties.name.title[0]?.text.content,
           description: project.properties.description.rich_text[0]?.text.content,
           slug: project.properties.slug.rich_text[0]?.text.content,
-          createdDate: project.properties['created date'].date.start,
+          createdDate: project.properties['created date'].date?.start ?? '',
           tags: project.properties.tags.multi_select.map((tag) => tag.name),
         }
       ));
