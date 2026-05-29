@@ -103,3 +103,17 @@ export const {
     lg: '(min-width: 1024px)',
   },
 });
+
+export const darkTheme = createTheme('dark-theme', {
+  colors: {
+    AlbescentWhite50: '#1c1c1c',
+    AlbescentWhite100: '#2a2a2a',
+    AlbescentWhite200: '#3a3a3a',
+    AlbescentWhite300: '#4a4a4a',
+
+    CodGray700: '#c0c0c0',
+    CodGray800: '#d0d0d0',
+    CodGray900: '#e0e0e0',
+    CodGray950: '#f5f5f5',
+  },
+});

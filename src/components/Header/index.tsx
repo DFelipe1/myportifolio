@@ -1,19 +1,26 @@
 import { HeaderContainer } from "./styles";
-import { Command } from "@phosphor-icons/react/dist/ssr";
+import { Command, SunDim, MoonStars } from "@phosphor-icons/react/dist/ssr";
 import { useKBar } from "kbar";
+import { useTheme } from "@/components/ThemeProvider";
 import Link from "next/link";
 
 export function Header(){
 
     const { query } = useKBar();
+    const { theme, toggleTheme } = useTheme();
 
     return(
         <HeaderContainer>
         <Link href={'/'}>D</Link>
 
-        <button onClick={() => query.toggle() }>
+        <div>
+          <button onClick={toggleTheme}>
+            {theme === 'light' ? <MoonStars size={20} /> : <SunDim size={20} />}
+          </button>
+          <button onClick={() => query.toggle() }>
             <Command size={24}/>
-        </button>
+          </button>
+        </div>
         </HeaderContainer>
     )
 }

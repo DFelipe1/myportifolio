@@ -16,6 +16,12 @@ export const HeaderContainer = styled('header', {
         backgroundColor: '$CodGray700',
     },
 
+    div: {
+        display: 'flex',
+        gap: '$2',
+        alignItems: 'center',
+    },
+
     button: {
         border: 0,
         backgroundColor: "transparent",
