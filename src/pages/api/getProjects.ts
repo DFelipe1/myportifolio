@@ -32,6 +32,10 @@ import { describe } from "node:test";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   
+    if (req.method !== 'GET') {
+      return res.status(405).json({ error: 'Method not allowed' });
+    }
+
     try {
       const databaseId = process.env.NOTION_DATABASE_ID as string; // Ensure this is set in your environment variables
       const response = await notion.databases.query({ 
