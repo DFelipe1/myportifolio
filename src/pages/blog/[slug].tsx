@@ -26,15 +26,16 @@ export default function Article(){
         const router = useRouter()
         
         useEffect(() => {
-            const { slug } = router.query;
+            const slug = router.query.slug;
             if (!slug) {
                 router.push('/blog');
+                return;
             };
             async function fetchPosts() {
                 try {
                     const res = await fetch('/api/getArticleContent', {
                         method: 'POST',
-                        body: JSON.stringify({ slug: slug }),
+                        body: JSON.stringify({ slug }),
                     }).then((res) => res.json());
                     setArticle(res);
                 } catch (err) {
@@ -43,7 +44,7 @@ export default function Article(){
         }
     
         fetchPosts();
-        }, []);
+        }, [router.query.slug]);
     
         if (!article) {
             return (

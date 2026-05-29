@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             sorts: [
                 {
                     property: 'created date',
-                    direction: 'ascending',
+                    direction: 'descending',
                 },
             ],
         });

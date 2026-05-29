@@ -21,6 +21,7 @@ interface ArticlesProps{
 export default function Blog() {
 
     const [articles, setArticles] = useState<ArticlesProps[]>([]);
+    const [loading, setLoading] = useState(true);
       
         useEffect(() => {
           async function fetchPosts() {
@@ -29,6 +30,8 @@ export default function Blog() {
               setArticles(res);
             } catch (err) {
               console.error('Erro ao buscar posts:', err);
+            } finally {
+              setLoading(false);
             }
           }
       
@@ -53,7 +56,7 @@ export default function Blog() {
 
             <BlogList>
                 {/* Loading state */}
-                {!articles && (
+                {loading && (
                     <>
                         <Box css={{ display: 'flex' , flexDirection: 'column', gap: '16px'}}>
                             <Box css={{ width: '40%'}}>
@@ -86,7 +89,7 @@ export default function Blog() {
                 )}
 
                 {/* No articles state */}
-                {articles.length === 0 && (
+                {!loading && articles.length === 0 && (
                     <Box css={{ display: 'flex', height:'40vh' , flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
                         <Text>Ainda estou escrevendo ou buscando coragem para postar 😅.</Text>
                         <Text>Volte mais tarde!</Text>
