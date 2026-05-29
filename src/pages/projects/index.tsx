@@ -12,7 +12,7 @@ import { Skeleton } from "@/components/Skeleton";
 interface ProjectsProps {
     projectId: string,
     name: string,
-    describetion: string,
+    description: string,
     slug: string,
     createdDate: string,
     tags: string[]
