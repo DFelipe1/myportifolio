@@ -7,6 +7,7 @@ import { Box } from "@/components/Box";
 import { Tag } from "@/styles/Tag";
 import { Cover } from "@/styles/Project";
 import Markdown from "react-markdown";
+import { NextSeo } from "next-seo";
 import { Skeleton } from "@/components/Skeleton";
 import { BackGo } from "@/components/BackGo";
 
@@ -69,6 +70,16 @@ export default function Article(){
         
 
     return(
+        <>
+        <NextSeo
+          title={`${article.title} | David Felipe Blog`}
+          description={article.content?.replace(/[#*`\n]/g, '').slice(0, 160) || "Artigo técnico por David Felipe"}
+          openGraph={{
+            title: article.title,
+            description: article.content?.replace(/[#*`\n]/g, '').slice(0, 160),
+            images: article.cover ? [{ url: article.cover }] : [],
+          }}
+        />
         <PostContainer>
             <BackGo href='/blog' />
             <PostHeader>
@@ -104,5 +115,6 @@ export default function Article(){
                 </Text>
             </div>
         </PostContainer>
+        </>
     )
 }

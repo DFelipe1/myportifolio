@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
+import { NextSeo } from "next-seo";
 import { Box, Cover } from "@/styles/Project";
 import { BackGo } from "@/components/BackGo";
 import { Skeleton } from "@/components/Skeleton";
@@ -25,8 +26,6 @@ interface ProjectProps {
 export default function Project() {
 
     const [project, setProject] = useState<ProjectProps>();
-
-    
     const router = useRouter()
     
     useEffect(() => {
@@ -85,6 +84,16 @@ export default function Project() {
     }
     
     return (
+        <>
+        <NextSeo
+          title={`${project.title} | David Felipe Portfolio`}
+          description={project.content?.replace(/[#*`\n]/g, '').slice(0, 160) || "Projeto desenvolvido por David Felipe"}
+          openGraph={{
+            title: project.title,
+            description: project.content?.replace(/[#*`\n]/g, '').slice(0, 160),
+            images: project.cover ? [{ url: project.cover }] : [],
+          }}
+        />
         <PostContainer>
             <BackGo href='/projects' />
             <PostHeader>
@@ -156,5 +165,6 @@ export default function Project() {
                 )}
             </ActionsBox>
         </PostContainer>
+        </>
     )
 }
