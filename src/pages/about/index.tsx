@@ -1,8 +1,7 @@
 import { Heading } from "@/styles/Heading";
 import { Text } from "@/styles/Text";
 import Image from "next/image";
-import Link from "next/link";
-import { AboutContainer, AboutContent, Carrer } from "@/styles/About";
+import { AboutContainer, AboutContent } from "@/styles/About";
 import { BackGo } from "@/components/BackGo";
 
 export default function About() {

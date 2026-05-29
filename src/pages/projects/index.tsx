@@ -49,34 +49,24 @@ export default function Projects() {
         Trabalhos & Contribuições
       </Heading>
 
-      {/* <SectionProjects>
-        <Heading as={'h2'} size={'sm'}>melhores projetos</Heading>
-        <ListWrapper>
-         <ProjectCard>
-          <Text as={'strong'} size={"md"}>Name Project</Text>
-            <Text as={'p'} size={"sm"}>Name Project</Text>
-            <Link href='/'>Ver projeto</Link>
-         </ProjectCard>
-         <ProjectCard>
-          <Text as={'strong'} size={"md"}>Name Project</Text>
-            <Text as={'p'} size={"sm"}>Name Project</Text>
-            <Link href='/'>Ver projeto</Link>
-         </ProjectCard>
-         <ProjectCard>
-            <Text as={'strong'} size={"md"}>Name Project</Text>
-            <Text as={'p'} size={"sm"}>Name Project</Text>
-            <Link href='/'>Ver projeto</Link>
-         </ProjectCard>
-         <ProjectCard>
-            <Text as={'strong'} size={"md"}>Name Project</Text>
-            <Text as={'p'} size={"sm"}>Name Project</Text>
-            <Link href='/'>Ver projeto</Link>
-         </ProjectCard>
-        </ListWrapper>
-      </SectionProjects> */}
-     
+      {projects.length >= 4 && (
+        <SectionProjects>
+          <Heading as={'h2'} size={'sm'}>melhores projetos</Heading>
+          <ListWrapper>
+            {projects.slice(0, 4).map((project) => (
+              <ProjectCard key={project.projectId}>
+                <Link href={`projects/${project.slug}`}>
+                  <Text as={'strong'} size={"md"}>{project.name}</Text>
+                  <Text as={'p'} size={"sm"}>{project.description}</Text>
+                  <Text as={'span'}>Ver projeto</Text>
+                </Link>
+              </ProjectCard>
+            ))}
+          </ListWrapper>
+        </SectionProjects>
+      )}
+      
       <SectionProjects>
-        {/* <Heading as={'h2'} size={'sm'}>Projetos Relevantes</Heading> */}
         <ListProjects>
           {projects.length === 0 && (
             <>
