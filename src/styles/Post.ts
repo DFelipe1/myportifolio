@@ -10,17 +10,6 @@ export const PostContainer = styled('main', {
         flexDirection: 'column',
         gap: '$4',
         width: '100%',
-
-        p: {
-            color: '$CodGray700',
-            fontWeight: '$light',
-        },
-    
-        img: {
-            width: '100%',
-            height: 'auto',
-            borderRadius: '$md'
-        }
     }, 
 
 })

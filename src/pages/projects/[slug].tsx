@@ -6,8 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react";
-import Markdown from "react-markdown";
 import { NextSeo } from "next-seo";
+import { markdownComponents } from "@/components/MarkdownRenderer";
+import Markdown from "react-markdown";
 import { Box, Cover } from "@/styles/Project";
 import { BackGo } from "@/components/BackGo";
 import { Skeleton } from "@/components/Skeleton";
@@ -141,11 +142,9 @@ export default function Project() {
 
 
             <div className="content">
-                <Text>
-                    <Markdown>
-                        {project.content}
-                    </Markdown>
-                </Text>
+                <Markdown components={markdownComponents}>
+                    {project.content}
+                </Markdown>
             </div>
              <ActionsBox>
                 {project.deploy && (

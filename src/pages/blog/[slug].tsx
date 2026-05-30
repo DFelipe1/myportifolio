@@ -6,8 +6,9 @@ import { useEffect, useState } from "react";
 import { Box } from "@/components/Box";
 import { Tag } from "@/styles/Tag";
 import { Cover } from "@/styles/Project";
-import Markdown from "react-markdown";
 import { NextSeo } from "next-seo";
+import { markdownComponents } from "@/components/MarkdownRenderer";
+import Markdown from "react-markdown";
 import { Skeleton } from "@/components/Skeleton";
 import { BackGo } from "@/components/BackGo";
 
@@ -108,11 +109,9 @@ export default function Article(){
             )}
             
             <div className="content">
-                <Text>
-                    <Markdown>
-                        {article.content}
-                    </Markdown>
-                </Text>
+                <Markdown components={markdownComponents}>
+                    {article.content}
+                </Markdown>
             </div>
         </PostContainer>
         </>
