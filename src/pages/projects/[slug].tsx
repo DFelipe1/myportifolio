@@ -1,169 +1,99 @@
 import { Heading } from "@/styles/Heading"
-import { ActionsBox, PostContainer, PostHeader } from "@/styles/Post"
+import { FloatingBar, PostContainer, PostHeader } from "@/styles/Post"
 import { Tag } from "@/styles/Tag";
 import { Text } from "@/styles/Text"
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react";
 import { NextSeo } from "next-seo";
 import { markdownComponents } from "@/components/MarkdownRenderer";
 import Markdown from "react-markdown";
 import { Box, Cover } from "@/styles/Project";
 import { BackGo } from "@/components/BackGo";
-import { Skeleton } from "@/components/Skeleton";
+import { GlobeHemisphereWest, Code, FigmaLogo } from "@phosphor-icons/react/dist/ssr";
+import { ProjectDetail, getProjectBySlug, getAllProjectSlugs } from "@/lib/notionHelpers";
 
-interface ProjectProps {
-    title: string
-    cover: string
-    createdDate: string
-    tags: string[]
-    prototype: string
-    code: string
-    deploy: string
-    content: string
+interface ProjectPageProps {
+  project: ProjectDetail;
 }
 
-export default function Project() {
+export async function getStaticProps({ params }: { params: { slug: string } }) {
+  const project = await getProjectBySlug(params.slug);
+  if (!project) return { notFound: true };
+  return {
+    props: { project },
+    revalidate: 3600,
+  };
+}
 
-    const [project, setProject] = useState<ProjectProps>();
-    const router = useRouter()
-    
-    useEffect(() => {
-        const { slug } = router.query;
-        if (!slug) {
-            router.push('/projects');
-        };
-        async function fetchPosts() {
-            try {
-                const res = await fetch('/api/getProject', {
-                    method: 'POST',
-                    body: JSON.stringify({ slug: router.query.slug }),
-                }).then((res) => res.json());
-                setProject(res);
-            } catch (err) {
-                console.error('Erro ao buscar posts:', err);
-                 router.push('/projects')
-            }
-    }
+export async function getStaticPaths() {
+  const slugs = await getAllProjectSlugs();
+  const paths = slugs.map((slug) => ({ params: { slug } }));
+  return { paths, fallback: "blocking" };
+}
 
-    fetchPosts();
-    }, []);
-
-    if (!project) {
-        return (
-            <PostContainer>
-            <BackGo href='/projects' />
-            <PostHeader>
-                <div>
-                  
-                        <Skeleton css={{width: 150, height: "30px"}} />
-                  
-            
-                    <Box>
-                        <Skeleton css={{width: 30, height: "20px"}} />
-                        <Skeleton css={{width: 30, height: "20px"}} />
-                        <Skeleton css={{width: 30, height: "20px"}} />
-                    </Box>
-                </div>
-                <Box>
-                    
-                    <Skeleton css={{width: 100, height: "20px"}} />
-
-                    <Skeleton css={{width: 100, height: "20px"}} />
-                    <Skeleton css={{width: 100, height: "20px"}} />
-                
-                </Box>
-            </PostHeader>
-        
-            <Box className="content" css={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <Skeleton css={{ height: '200px', width: '100%' }}/>
+export default function Project({ project }: ProjectPageProps) {
+  return (
+    <>
+      <NextSeo
+        title={`${project.title} | David Felipe Portfolio`}
+        description={project.content?.replace(/[#*`\n]/g, "").slice(0, 160) || "Projeto desenvolvido por David Felipe"}
+        openGraph={{
+          title: project.title,
+          description: project.content?.replace(/[#*`\n]/g, "").slice(0, 160),
+          images: project.cover ? [{ url: project.cover }] : [],
+        }}
+      />
+      <PostContainer>
+        <BackGo href="/projects" />
+        <PostHeader>
+          <div>
+            <Heading
+              as={"h1"}
+              size={"md"}
+              css={{
+                "@md": { fontSize: "6xl" },
+              }}
+            >
+              {project.title}
+            </Heading>
+            <Box>
+              {project.tags.map((tag, index) => (
+                <Tag css={{ width: "fit-content" }} background={"true"} key={index} as={"span"}>{tag}</Tag>
+              ))}
             </Box>
+          </div>
+          <Box>
+            <Text as={"span"}>{project.createdDate}</Text>
+          </Box>
+        </PostHeader>
 
-        </PostContainer>
-        )
-    }
-    
-    return (
-        <>
-        <NextSeo
-          title={`${project.title} | David Felipe Portfolio`}
-          description={project.content?.replace(/[#*`\n]/g, '').slice(0, 160) || "Projeto desenvolvido por David Felipe"}
-          openGraph={{
-            title: project.title,
-            description: project.content?.replace(/[#*`\n]/g, '').slice(0, 160),
-            images: project.cover ? [{ url: project.cover }] : [],
-          }}
-        />
-        <PostContainer>
-            <BackGo href='/projects' />
-            <PostHeader>
-                <div>
-                   
-                    <Heading
-                        as={'h1'}
-                        size={'md'}
-                        css={{ 
-                            '@md': { fontSize: '6xl' }
-                        }}
-                    >{project.title}</Heading>
-                    <Box>
-                        {project.tags.map((tag, index) => (
-                            <Tag css={{ width: 'fit-content' }} background={"true"} key={index} as={'span'}>{tag}</Tag>
-                        ))}
-                    </Box>
-                </div>
-                <Box>
-                
-                    <Text as={'span'}>{project.createdDate}</Text>
+        <Cover src={project.cover} alt="imagem do projeto" />
 
-                    <ActionsBox>
-                        {project.deploy && (
-                            <Link href={project.deploy} target="_blank">
-                                <Tag as={'span'}>Deploy</Tag>
-                            </Link>
-                        )}
-                        {project.code && (
-                            <Link href={project.code} target="_blank">
-                                <Tag as={'span'}>Código</Tag>
-                            </Link>
-                        )}
-                        {project.prototype && (
-                            <Link href={project.prototype} target="_blank">
-                                <Tag as={'span'}>Protótipo</Tag>
-                            </Link>
-                        )}
-                    </ActionsBox>
-                </Box>
-            </PostHeader>
-            
+        <div className="content">
+          <Markdown components={markdownComponents}>
+            {project.content}
+          </Markdown>
+        </div>
 
-            <Cover src={project.cover} alt="imagem do projeto"/>
-
-
-            <div className="content">
-                <Markdown components={markdownComponents}>
-                    {project.content}
-                </Markdown>
-            </div>
-             <ActionsBox>
-                {project.deploy && (
-                    <Link href={project.deploy} target="_blank">
-                        <Tag as={'span'}>Deploy</Tag>
-                    </Link>
-                )}
-                {project.code && (
-                    <Link href={project.code} target="_blank">
-                        <Tag as={'span'}>Código</Tag>
-                    </Link>
-                )}
-                {project.prototype && (
-                    <Link href={project.prototype} target="_blank">
-                        <Tag as={'span'}>Protótipo</Tag>
-                    </Link>
-                )}
-            </ActionsBox>
-        </PostContainer>
-        </>
-    )
+        <FloatingBar>
+          {project.deploy && (
+            <a href={project.deploy} target="_blank" rel="noopener noreferrer">
+              <GlobeHemisphereWest size={16} weight="bold" />
+              Deploy
+            </a>
+          )}
+          {project.code && (
+            <a href={project.code} target="_blank" rel="noopener noreferrer">
+              <Code size={16} weight="bold" />
+              Código
+            </a>
+          )}
+          {project.prototype && (
+            <a href={project.prototype} target="_blank" rel="noopener noreferrer">
+              <FigmaLogo size={16} weight="bold" />
+              Protótipo
+            </a>
+          )}
+        </FloatingBar>
+      </PostContainer>
+    </>
+  )
 }

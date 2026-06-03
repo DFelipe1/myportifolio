@@ -56,3 +56,44 @@ export const ActionsBox = styled('div', {
         }
     }
 })
+
+export const FloatingBar = styled('div', {
+    position: 'fixed',
+    bottom: '$6',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    display: 'flex',
+    gap: '$1',
+    padding: '$2 $4',
+    alignItems: 'center',
+    backgroundColor: 'rgba(250, 247, 242, 0.9)',
+    backdropFilter: 'blur(12px)',
+    borderRadius: '$full',
+    border: '1px solid $AlbescentWhite200',
+    boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+    zIndex: 100,
+
+    a: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '$1',
+        textDecoration: 'none',
+        color: '$CodGray700',
+        fontWeight: '$semibold',
+        fontSize: '$xs',
+        padding: '$2 $3',
+        borderRadius: '$full',
+        transition: 'background-color 0.2s ease-in-out',
+        lineHeight: '$shorter',
+
+        '@sm': {
+            fontSize: '$sm',
+            padding: '$2 $4',
+        },
+
+        '&:hover': {
+            backgroundColor: '$AlbescentWhite300',
+            color: '$CodGray950',
+        }
+    }
+})

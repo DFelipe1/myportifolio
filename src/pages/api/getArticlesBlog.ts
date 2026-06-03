@@ -1,48 +1,13 @@
-import { notion } from "@/lib/notion";
-import { NotionDatabaseResponse } from "@/types/notionDatabaseResponse";
 import { NextApiRequest, NextApiResponse } from "next";
-
+import { getAllArticles } from "@/lib/notionHelpers";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  
     if (req.method !== 'GET') {
       return res.status(405).json({ error: 'Method not allowed' });
     }
 
     try {
-        const databaseId = process.env.NOTION_DATABASE_BLOG_ID as string; 
-        const response = await notion.databases.query({ 
-            database_id: databaseId,
-            filter:{
-                or: [
-                    {
-                        property: 'publicked',
-                        checkbox: {
-                            equals: true
-                        }
-                    }
-                ],
-            },
-            sorts: [
-                {
-                    property: 'created date',
-                    direction: 'descending',
-                },
-            ],
-        });
-
-        const typedResponse = (response as unknown) as NotionDatabaseResponse;
-         const data = typedResponse.results.map((article) => (
-        {
-          articleId: article.id,
-          name: article.properties.name.title[0]?.text.content,
-          description: article.properties.description.rich_text[0]?.text.content,
-          slug: article.properties.slug.rich_text[0]?.text.content,
-          createdDate: article.properties['created date'].date?.start ?? '',
-          tags: article.properties.tags.multi_select.map((tag) => tag.name),
-        }
-      ));
-
+        const data = await getAllArticles();
         res.status(200).json(data);
     } catch (error) {
         console.error('Erro ao buscar dados do Notion:', error);

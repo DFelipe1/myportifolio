@@ -4,42 +4,23 @@ import { BlogContainer, BlogLinkLine, BlogList } from "@/styles/Blog";
 import Link from "next/link";
 import { Text } from "@/styles/Text";
 import { Divider } from "@/styles/Divider";
-import { useEffect, useState } from "react";
 import { Tag } from "@/styles/Tag";
 import { Box } from "@/components/Box";
-import { Skeleton } from "@/components/Skeleton";
+import { ArticleListItem, getAllArticles } from "@/lib/notionHelpers";
 
-interface ArticlesProps{
-    articleId: string,
-    name: string,
-    description: string,
-    slug: string,
-    createdDate: string,
-    tags: string[]
+interface BlogPageProps {
+  articles: ArticleListItem[];
 }
 
-export default function Blog() {
+export async function getStaticProps() {
+  const articles = await getAllArticles();
+  return {
+    props: { articles },
+    revalidate: 3600,
+  };
+}
 
-    const [articles, setArticles] = useState<ArticlesProps[]>([]);
-    const [loading, setLoading] = useState(true);
-      
-        useEffect(() => {
-          async function fetchPosts() {
-            try {
-              const res = await fetch('/api/getArticlesBlog').then((res) => res.json());
-              setArticles(res);
-            } catch (err) {
-              console.error('Erro ao buscar posts:', err);
-            } finally {
-              setLoading(false);
-            }
-          }
-      
-          fetchPosts();
-        }, []);
-
-
-
+export default function Blog({ articles }: BlogPageProps) {
     return (
         <BlogContainer>
             <BackGo href='/' />
@@ -55,41 +36,8 @@ export default function Blog() {
             </Heading>
 
             <BlogList>
-                {/* Loading state */}
-                {loading && (
-                    <>
-                        <Box css={{ display: 'flex' , flexDirection: 'column', gap: '16px'}}>
-                            <Box css={{ width: '40%'}}>
-                                <Skeleton css={{ height: '30px'}}/>
-                            </Box>
-                            <Box css={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '8px'}}>
-                                <Skeleton css={{ height: '20px'}}/>
-                                <Skeleton css={{ height: '20px'}}/>
-                            </Box>
-                        </Box>
-                        <Box css={{ display: 'flex' , flexDirection: 'column', gap: '16px'}}>
-                            <Box css={{ width: '40%'}}>
-                                <Skeleton css={{ height: '30px'}}/>
-                            </Box>
-                            <Box css={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '8px'}}>
-                                <Skeleton css={{ height: '20px'}}/>
-                                <Skeleton css={{ height: '20px'}}/>
-                            </Box>
-                        </Box>
-                        <Box css={{ display: 'flex' , flexDirection: 'column', gap: '16px'}}>
-                            <Box css={{ width: '40%'}}>
-                                <Skeleton css={{ height: '30px'}}/>
-                            </Box>
-                            <Box css={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '8px'}}>
-                                <Skeleton css={{ height: '20px'}}/>
-                                <Skeleton css={{ height: '20px'}}/>
-                            </Box>
-                        </Box>
-                    </>
-                )}
-
                 {/* No articles state */}
-                {!loading && articles.length === 0 && (
+                {articles.length === 0 && (
                     <Box css={{ display: 'flex', height:'40vh' , flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
                         <Text>Ainda estou escrevendo ou buscando coragem para postar 😅.</Text>
                         <Text>Volte mais tarde!</Text>
@@ -98,8 +46,8 @@ export default function Blog() {
 
                 {/* Articles list */}
                 {articles.map((article) => (
-                    <div>
-                        <BlogLinkLine key={article.articleId}>
+                    <div key={article.articleId}>
+                        <BlogLinkLine>
                             <div>
                                 <Link href={`blog/${article.slug}`}>
                                     <Text as={'strong'}>{article.name}</Text>

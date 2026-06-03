@@ -4,36 +4,22 @@ import Link from "next/link";
 import { Box, ListProjects, ListWrapper, ProjectBox, ProjectCard, ProjectContainer, SectionProjects } from "@/styles/Project";
 import { BackGo } from "@/components/BackGo";
 import { Divider } from "@/styles/Divider";
-import { useEffect, useState } from "react";
 import { Tag } from "@/styles/Tag";
-import { Skeleton } from "@/components/Skeleton";
+import { ProjectListItem, getAllProjects } from "@/lib/notionHelpers";
 
-interface ProjectsProps {
-    projectId: string,
-    name: string,
-    description: string,
-    slug: string,
-    createdDate: string,
-    tags: string[]
+interface ProjectsPageProps {
+  projects: ProjectListItem[];
 }
 
-export default function Projects() {
+export async function getStaticProps() {
+  const projects = await getAllProjects();
+  return {
+    props: { projects },
+    revalidate: 3600,
+  };
+}
 
-  const [projects, setProjects] = useState<ProjectsProps[]>([]);
-  
-    useEffect(() => {
-      async function fetchPosts() {
-        try {
-          const res = await fetch('/api/getProjects').then((res) => res.json());
-          setProjects(res);
-        } catch (err) {
-          console.error('Erro ao buscar posts:', err);
-        }
-      }
-  
-      fetchPosts();
-    }, []);
-
+export default function Projects({ projects }: ProjectsPageProps) {
   return (
     <ProjectContainer>
       <BackGo href='/' />
@@ -69,41 +55,10 @@ export default function Projects() {
       <SectionProjects>
         <ListProjects>
           {projects.length === 0 && (
-            <>
-              <ProjectBox >
-                <a>
-                  <Skeleton css={{ height: '30px', width: '200px' }} />
-                  <Box>
-                    <Skeleton css={{ height: '20px', width: '50px' }} />
-                    <div>
-                      <Skeleton css={{ height: '20px', width: '30px' }} />
-                    </div>
-                  </Box>
-                </a>
-              </ProjectBox>
-              <ProjectBox >
-                <a>
-                  <Skeleton css={{ height: '30px', width: '200px' }} />
-                  <Box>
-                    <Skeleton css={{ height: '20px', width: '50px' }} />
-                    <div>
-                      <Skeleton css={{ height: '20px', width: '30px' }} />
-                    </div>
-                  </Box>
-                </a>
-              </ProjectBox>
-              <ProjectBox >
-                <a>
-                  <Skeleton css={{ height: '30px', width: '200px' }} />
-                  <Box>
-                    <Skeleton css={{ height: '20px', width: '50px' }} />
-                    <div>
-                      <Skeleton css={{ height: '20px', width: '30px' }} />
-                    </div>
-                  </Box>
-                </a>
-              </ProjectBox>
-            </>
+            <Box css={{ display: 'flex', height:'40vh' , flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+              <Text>Nenhum projeto publicado ainda.</Text>
+              <Text>Volte mais tarde!</Text>
+            </Box>
           )}
           
           {projects.map((project) => (
