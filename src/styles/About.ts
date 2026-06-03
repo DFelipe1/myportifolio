@@ -109,7 +109,6 @@ export const TimelineItem = styled('div', {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    gap: '$2',
     scrollSnapAlign: 'center',
     position: 'relative',
     minWidth: '100px',
@@ -155,6 +154,7 @@ export const TimelineYear = styled('span', {
     color: '$CodGray950',
     lineHeight: '$shorter',
     whiteSpace: 'nowrap',
+    marginBottom: '$2',
 })
 
 export const TimelineEvent = styled('span', {
@@ -165,6 +165,7 @@ export const TimelineEvent = styled('span', {
     lineHeight: '$base',
     textAlign: 'center',
     whiteSpace: 'nowrap',
+    marginTop: '$2',
 
     '@xs': {
         fontSize: '$xs',

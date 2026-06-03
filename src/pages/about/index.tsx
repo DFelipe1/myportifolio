@@ -6,10 +6,11 @@ import { BackGo } from "@/components/BackGo";
 import { useRef, useEffect } from "react";
 
 const career = [
-    { year: "2022", event: "Início da Faculdade ADS" },
-    { year: "2023", event: "Primeiros projetos UI/UX" },
-    { year: "2024", event: "Freelance & Portfolio" },
-    { year: "2025", event: "Desenvolvedor Front-end" },
+    { year: "2023", event: "Auxiliar de Protético" },
+    { year: "2024", event: "Início da Graduação ADS" },
+    { year: "2024", event: "Quebra-Galho · Dev Front-end" },
+    { year: "2025", event: "Instrutor de Informática" },
+    { year: "2026", event: "Front-end & UI Design" },
 ]
 
 export default function About() {
