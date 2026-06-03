@@ -1,10 +1,26 @@
 import { Heading } from "@/styles/Heading";
 import { Text } from "@/styles/Text";
 import Image from "next/image";
-import { AboutContainer, AboutContent } from "@/styles/About";
+import { AboutContainer, AboutContent, CarrerSection, TimelineWrapper, TimelineTrack, TimelineItem, TimelineDot, TimelineYear, TimelineEvent } from "@/styles/About";
 import { BackGo } from "@/components/BackGo";
+import { useRef, useEffect } from "react";
+
+const career = [
+    { year: "2022", event: "Início da Faculdade ADS" },
+    { year: "2023", event: "Primeiros projetos UI/UX" },
+    { year: "2024", event: "Freelance & Portfolio" },
+    { year: "2025", event: "Desenvolvedor Front-end" },
+]
 
 export default function About() {
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollLeft = scrollRef.current.scrollWidth;
+        }
+    }, []);
+
     return (
         <AboutContainer>
             <BackGo href='/' />
@@ -41,10 +57,24 @@ export default function About() {
                     </Text>
                 </div>
             </AboutContent>
-            {/* <Carrer>
-                <Heading as={'h2'} size={'md'}>Carreira</Heading>
-                <span>Preciso de um emprego</span>
-            </Carrer> */}
+
+            <CarrerSection>
+                <Heading as={'h2'} size={'sm'}>Carreira</Heading>
+                <TimelineWrapper ref={scrollRef}>
+                    <TimelineTrack>
+                        {career.map((item, index) => {
+                            const isActive = index === career.length - 1;
+                            return (
+                                <TimelineItem key={item.year} active={isActive}>
+                                    <TimelineYear>{item.year}</TimelineYear>
+                                    <TimelineDot active={isActive} />
+                                    <TimelineEvent>{item.event}</TimelineEvent>
+                                </TimelineItem>
+                            );
+                        })}
+                    </TimelineTrack>
+                </TimelineWrapper>
+            </CarrerSection>
 
         </AboutContainer>
     )
