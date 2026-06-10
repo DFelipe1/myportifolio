@@ -14,7 +14,7 @@
     "@stitches/react": "^1.2.8",
     "dotenv": "^16.4.7",
     "kbar": "^0.1.0-beta.45",
-    "next": "15.2.1",
+    "next": "15.2.8",
     "next-seo": "^6.6.0",
     "notion-to-md": "^3.1.9",
     "react": "^18.3.1",
