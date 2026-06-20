@@ -6,6 +6,7 @@ export default function Document() {
     <Html lang="pt-BR">
       <Head >
         <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
+        <link rel="icon" href="/favicon/favicon.ico" />
       </Head>
       <body>
         <Main />

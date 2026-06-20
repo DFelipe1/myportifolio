@@ -3,6 +3,7 @@ import { Text } from "@/styles/Text";
 import Image from "next/image";
 import { AboutContainer, AboutContent, CarrerSection, TimelineWrapper, TimelineTrack, TimelineItem, TimelineDot, TimelineYear, TimelineEvent } from "@/styles/About";
 import { BackGo } from "@/components/BackGo";
+import { NextSeo } from "next-seo";
 import { useRef, useEffect } from "react";
 
 const career = [
@@ -26,6 +27,10 @@ export default function About() {
 
     return (
         <AboutContainer>
+            <NextSeo
+                title='Sobre | David Felipe'
+                description='Oi, eu sou o David Felipe! Minha jornada no mundo digital começou unindo design e tecnologia para criar experiências interativas.'
+            />
             <BackGo href='/' />
 
             <Heading 

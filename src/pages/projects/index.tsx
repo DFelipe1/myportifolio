@@ -5,6 +5,7 @@ import { Box, ListProjects, ListWrapper, ProjectBox, ProjectCard, ProjectContain
 import { BackGo } from "@/components/BackGo";
 import { Divider } from "@/styles/Divider";
 import { Tag } from "@/styles/Tag";
+import { NextSeo } from "next-seo";
 import { ProjectListItem, getAllProjects } from "@/lib/notionHelpers";
 
 interface ProjectsPageProps {
@@ -22,6 +23,13 @@ export async function getStaticProps() {
 export default function Projects({ projects }: ProjectsPageProps) {
   return (
     <ProjectContainer>
+      <NextSeo
+          title='David Felipe | Projetos'
+          description='Veja meus melhores projetos'
+          openGraph={{
+              url: `https://davidfelipe.dev/projects`,
+          }}
+      />
       <BackGo href='/' />
 
       <Heading 

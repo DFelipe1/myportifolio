@@ -6,6 +6,7 @@ import { Text } from "@/styles/Text";
 import { Divider } from "@/styles/Divider";
 import { Tag } from "@/styles/Tag";
 import { Box } from "@/components/Box";
+import { NextSeo } from "next-seo";
 import { ArticleListItem, getAllArticles } from "@/lib/notionHelpers";
 
 interface BlogPageProps {
@@ -23,6 +24,13 @@ export async function getStaticProps() {
 export default function Blog({ articles }: BlogPageProps) {
     return (
         <BlogContainer>
+            <NextSeo
+                title='David Felipe | Blog'
+                description='meu cantinho de anotações e estudos'
+                openGraph={{
+                    url: `https://davidfelipe.dev/blog`,
+                }}
+            />
             <BackGo href='/' />
             
             <Heading 
