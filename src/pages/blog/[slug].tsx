@@ -3,7 +3,7 @@ import { Text } from "@/styles/Text"
 import { PostContainer, PostHeader } from "@/styles/Post"
 import { Box } from "@/components/Box";
 import { Tag } from "@/styles/Tag";
-import { Cover } from "@/styles/Project";
+import CoverWithRefresh from "@/components/CoverWithRefresh";
 import { NextSeo } from "next-seo";
 import { markdownComponents } from "@/components/MarkdownRenderer";
 import Markdown from "react-markdown";
@@ -38,7 +38,7 @@ export default function Article({ article }: ArticlePageProps) {
         openGraph={{
           title: article.title,
           description: article.content?.replace(/[#*`\n]/g, "").slice(0, 160),
-          images: article.cover ? [{ url: article.cover }] : [],
+          images: [],
         }}
       />
       <PostContainer>
@@ -64,9 +64,7 @@ export default function Article({ article }: ArticlePageProps) {
           <Text as={"span"} css={{ minWidth: "fit-content" }}>{article.createdDate}</Text>
         </PostHeader>
 
-        {article.cover && (
-          <Cover src={article.cover} alt="imagem do projeto" />
-        )}
+        <CoverWithRefresh pageId={article.pageId} alt="imagem do artigo" />
 
         <div className="content">
           <Markdown components={markdownComponents}>

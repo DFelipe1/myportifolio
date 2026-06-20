@@ -5,7 +5,8 @@ import { Text } from "@/styles/Text"
 import { NextSeo } from "next-seo";
 import { markdownComponents } from "@/components/MarkdownRenderer";
 import Markdown from "react-markdown";
-import { Box, Cover } from "@/styles/Project";
+import { Box } from "@/styles/Project";
+import CoverWithRefresh from "@/components/CoverWithRefresh";
 import { BackGo } from "@/components/BackGo";
 import { GlobeHemisphereWest, Code, FigmaLogo } from "@phosphor-icons/react/dist/ssr";
 import { ProjectDetail, getProjectBySlug, getAllProjectSlugs } from "@/lib/notionHelpers";
@@ -38,7 +39,7 @@ export default function Project({ project }: ProjectPageProps) {
         openGraph={{
           title: project.title,
           description: project.content?.replace(/[#*`\n]/g, "").slice(0, 160),
-          images: project.cover ? [{ url: project.cover }] : [],
+          images: [],
         }}
       />
       <PostContainer>
@@ -65,7 +66,7 @@ export default function Project({ project }: ProjectPageProps) {
           </Box>
         </PostHeader>
 
-        <Cover src={project.cover} alt="imagem do projeto" />
+        <CoverWithRefresh pageId={project.pageId} alt="imagem do projeto" />
 
         <div className="content">
           <Markdown components={markdownComponents}>

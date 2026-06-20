@@ -7,7 +7,9 @@ import { useRef, useEffect } from "react";
 
 const career = [
     { year: "2023", event: "Auxiliar de Protético" },
+    { year: "2024", event: "Curso de Design · Zion " },
     { year: "2024", event: "Início da Graduação ADS" },
+    { year: "2024", event: "TuneWave · Ux/UI Design" },
     { year: "2024", event: "Quebra-Galho · Dev Front-end" },
     { year: "2025", event: "Instrutor de Informática" },
     { year: "2026", event: "Front-end & UI Design" },

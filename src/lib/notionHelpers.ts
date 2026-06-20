@@ -12,6 +12,7 @@ export interface ProjectListItem {
 }
 
 export interface ProjectDetail {
+  pageId: string;
   title: string;
   cover: string;
   createdDate: string;
@@ -32,6 +33,7 @@ export interface ArticleListItem {
 }
 
 export interface ArticleDetail {
+  pageId: string;
   title: string;
   cover: string;
   createdDate: string;
@@ -109,6 +111,7 @@ export async function getProjectBySlug(
   const mdString = n2m.toMarkdownString(mdblocks);
 
   return {
+    pageId: typedResponse.results[0].id,
     title: typedResponse.results[0].properties.name.title[0]?.text.content,
     cover:
       typedResponse.results[0].properties["Files & media"].files[0]?.file.url ?? '',
@@ -200,6 +203,7 @@ export async function getArticleBySlug(
   const mdString = n2m.toMarkdownString(mdblocks);
 
   return {
+    pageId: typedResponse.results[0].id,
     title: typedResponse.results[0].properties.name.title[0]?.text.content,
     cover:
       typedResponse.results[0].properties["Files & media"].files[0]?.file.url ?? '',

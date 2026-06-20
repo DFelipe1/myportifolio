@@ -66,7 +66,7 @@ export default function Projects({ projects }: ProjectsPageProps) {
               <ProjectBox>
                 <Link href={`projects/${project.slug}`}>
                   <Text as={'strong'}>{project.name}</Text>
-                  <Box>
+                  <Box css={{alignItems:'end' }}>
                     <Text as={'span'}>{project.createdDate}</Text>
                     <div>
                       {project.tags.map((tag) => (
